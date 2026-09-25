@@ -1,0 +1,59 @@
+diff --git a/scOT/model.py b/scOT/model.py
+index ff6c692..3b7cda3 100644
+--- a/scOT/model.py
++++ b/scOT/model.py
+@@ -111,6 +111,8 @@ class ScOTConfig(PretrainedConfig):
+         pinn_pde_weight: float = 0.05,
+         pinn_top_weight: float = 0.05,
+         pinn_htc_weight: float = 0.05,  # Suggested values: supervised loss 1.0, auxiliary losses 0.1.
++        grad_weight_alpha: float = 1.0,
++        interface_lambda: float = 0.05,
+         **kwargs,
+     ):
+         super().__init__(**kwargs)
+@@ -150,6 +152,8 @@ class ScOTConfig(PretrainedConfig):
+         self.pinn_pde_weight = pinn_pde_weight
+         self.pinn_top_weight = pinn_top_weight
+         self.pinn_htc_weight = pinn_htc_weight
++        self.grad_weight_alpha = grad_weight_alpha
++        self.interface_lambda = interface_lambda
+
+
+ class LayerNorm(nn.LayerNorm):
+@@ -1796,8 +1800,35 @@ class ScOT(Swinv2PreTrainedModel):
+                     + self.config.pinn_top_weight * physics_dict["top_loss"]
+                     + self.config.pinn_htc_weight * physics_dict["htc_loss"]
+                 )
++            elif self.config.p == 5:
++                if labels is None:
++                    raise ValueError("Labels are required for gradient-weighted loss (p=5).")
++                dT_dx = labels[:, :, :, 1:] - labels[:, :, :, :-1]
++                dT_dx = F.pad(dT_dx, (0, 1, 0, 0), mode='replicate')
++                dT_dy = labels[:, :, 1:, :] - labels[:, :, :-1, :]
++                dT_dy = F.pad(dT_dy, (0, 0, 0, 1), mode='replicate')
++                grad_mag = torch.sqrt(dT_dx ** 2 + dT_dy ** 2 + 1e-8)
++                weights = 1.0 + self.config.grad_weight_alpha * grad_mag
++                weights = weights / weights.mean()
++                loss = (weights * (prediction - labels).abs()).mean()
++            elif self.config.p == 6:
++                if labels is None:
++                    raise ValueError("Labels are required for combined loss (p=6).")
++                # Gradient-weighted base loss
++                dT_dx = labels[:, :, :, 1:] - labels[:, :, :, :-1]
++                dT_dx = F.pad(dT_dx, (0, 1, 0, 0), mode='replicate')
++                dT_dy = labels[:, :, 1:, :] - labels[:, :, :-1, :]
++                dT_dy = F.pad(dT_dy, (0, 0, 0, 1), mode='replicate')
++                grad_mag = torch.sqrt(dT_dx ** 2 + dT_dy ** 2 + 1e-8)
++                weights = 1.0 + self.config.grad_weight_alpha * grad_mag
++                weights = weights / weights.mean()
++                base_loss = (weights * (prediction - labels).abs()).mean()
++                # Interface penalty: extra MAE on top-2% high-gradient (boundary) pixels
++                interface_mask = (grad_mag > grad_mag.mean() + 2 * grad_mag.std()).float()
++                interface_loss = (interface_mask * (prediction - labels).abs()).mean()
++                loss = base_loss + self.config.interface_lambda * interface_loss
+             else:
+-                raise ValueError("p must be 1, 2, 3, or 4")
++                raise ValueError("p must be 1, 2, 3, 4, 5, or 6")
+
+         if not return_dict:
+             output = (prediction,) + decoder_output[1:] + encoder_outputs[1:]

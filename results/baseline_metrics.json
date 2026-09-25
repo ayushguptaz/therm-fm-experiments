@@ -1,0 +1,14 @@
+{
+  "experiment": "baseline",
+  "loss_fn": "L1 (p=1)",
+  "dataset": "HS_SC_refine1",
+  "model": "Therm-FM-T (21M params)",
+  "epochs": 200,
+  "eval_loss_normalized": 0.005926,
+  "rmse": 0.07652606971201198,
+  "r2": 0.9997831408679485,
+  "max_absolute_error": 1.4444886779785155,
+  "mean_absolute_error": 0.021048819756135345,
+  "mape_percent": 0.006111344716109351,
+  "pape_percent": 0.3963272252585739
+}

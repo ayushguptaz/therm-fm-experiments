@@ -1,0 +1,9 @@
+{
+  "experiment": "combined_p6",
+  "loss_fn": "Gradient-Weighted L1 + Interface Penalty (p=6, alpha=1.0, lambda=0.05)",
+  "dataset": "HS_SC_refine1",
+  "model": "Therm-FM-T (21M params)",
+  "epochs": 200,
+  "status": "training_in_progress",
+  "note": "Results will be updated once the 200-epoch run completes (~2026-09-25)"
+}

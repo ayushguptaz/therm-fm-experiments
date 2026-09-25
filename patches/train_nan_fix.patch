@@ -1,0 +1,33 @@
+diff --git a/scOT/train.py b/scOT/train.py
+index a36f08c..192a0c6 100644
+--- a/scOT/train.py
++++ b/scOT/train.py
+@@ -555,7 +555,9 @@ if __name__ == "__main__":
+             use_absolute_embeddings=False,
+             initializer_range=0.02,
+             layer_norm_eps=1e-5,
+-            p=2,  # Choose the calculation method for the loss function , 1 for l1, 2 for l2 ,3 for hotspot loss ,4 for pinn loss
++            p=config.get("p", 1),
++            grad_weight_alpha=config.get("grad_weight_alpha", 1.0),
++            interface_lambda=config.get("interface_lambda", 0.05),
+             channel_slice_list_normalized_loss=channel_slice_list,
+             residual_model="convnext",
+             use_conditioning=time_involved,
+@@ -622,6 +624,14 @@ if __name__ == "__main__":
+         model = ScOT.from_pretrained(
+             params.finetune_from, config=model_config, ignore_mismatched_sizes=True
+         )
++        # Fix NaN weights left by ignore_mismatched_sizes on shape-mismatched layers.
++        # patch_recovery.projection.weight and similar are left uninitialized (NaN) when
++        # checkpoint shapes differ from the current config. Without this, NaN propagates
++        # through the first forward pass and corrupts the optimizer state permanently.
++        import torch.nn as nn_init
++        for name, param in model.named_parameters():
++            if torch.isnan(param).any() or torch.isinf(param).any():
++                if 'weight' in name and param.dim() >= 2:
++                    nn_init.init.xavier_normal_(param.data)
++                else:
++                    nn_init.init.zeros_(param.data)
+     else:
+         model = ScOT(model_config)
+     num_params = get_num_parameters(model)

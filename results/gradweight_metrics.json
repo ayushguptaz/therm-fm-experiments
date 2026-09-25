@@ -1,0 +1,20 @@
+{
+  "experiment": "gradweight_p5",
+  "loss_fn": "Gradient-Weighted L1 (p=5, alpha=1.0)",
+  "dataset": "HS_SC_refine1",
+  "model": "Therm-FM-T (21M params)",
+  "epochs": 200,
+  "eval_loss_normalized": 0.003722,
+  "rmse": 0.05196354874663783,
+  "r2": 0.9999200248718262,
+  "max_absolute_error": 0.8583876495361328,
+  "mean_absolute_error": 0.017789671272970736,
+  "mape_percent": 0.0052077986703577,
+  "pape_percent": 0.2420056202710839,
+  "vs_baseline": {
+    "rmse_delta_pct": -32.1,
+    "max_error_delta_pct": -40.6,
+    "mae_delta_pct": -15.5,
+    "pape_delta_pct": -38.9
+  }
+}
