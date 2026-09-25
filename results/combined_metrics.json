@@ -4,6 +4,13 @@
   "dataset": "HS_SC_refine1",
   "model": "Therm-FM-T (21M params)",
   "epochs": 200,
-  "status": "training_in_progress",
-  "note": "Results will be updated once the 200-epoch run completes (~2026-09-25)"
+  "status": "failed_to_converge",
+  "eval_loss_normalized": 0.8616,
+  "rmse": 63.911423665595606,
+  "r2": -110.86713250923157,
+  "max_absolute_error": 1689.679080444336,
+  "mean_absolute_error": 5.420577642202377,
+  "mape_percent": 1.6356749522109029,
+  "pape_percent": 512.3310154914856,
+  "failure_analysis": "grad_norm stayed ~33000 throughout all 200 epochs, clipped to 5.0 every step. Effective LR ~7.6e-9. Interface penalty (lambda=0.05) created conflicting gradient signal preventing convergence. Fix: reduce interface_lambda to 0.001 or lower, or add a warmup schedule for the interface term."
 }

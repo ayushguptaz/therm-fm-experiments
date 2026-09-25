@@ -10,7 +10,9 @@ Experiments on top of [Therm-FM](https://github.com/haiyangxin/Therm-FM) (arXiv 
 |---|---|---|---|---|---|---|
 | Baseline | L1 (p=1) | 0.0765 | 1.444 | 0.02105 | 0.396 | — |
 | **Grad-Weight** | GW-L1 (p=5) | **0.0520** | **0.858** | **0.01779** | **0.242** | Max **-41%**, PAPE **-39%** |
-| Combined | GW-L1 + Interface (p=6) | pending | pending | pending | pending | TBD |
+| Combined | GW-L1 + Interface (p=6) | — | — | — | — | ❌ Did not converge (lambda=0.05 too large) |
+
+> p=6 failure: `grad_norm ~33000` throughout all 200 epochs — interface penalty conflicted with base loss. Fix: reduce `interface_lambda` from 0.05 → 0.001.
 
 > Dataset: HS-SC-refine1 (HotSpot South-China chip, 55×55, 5000 samples, 80/20 train-test)
 > Model: Therm-FM-T (21M params, SwinV2 encoder + ConvNeXt decoder)
