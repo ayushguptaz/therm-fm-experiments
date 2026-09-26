@@ -30,6 +30,7 @@ Experiments on top of [Therm-FM](https://github.com/haiyangxin/Therm-FM) (arXiv 
 
 ```
 ├── README.md                       # This file
+├── EXPERIMENTS_SUMMARY.md          # All experiments in order — key findings
 ├── EXPERIMENT_REPORT.md            # Model-T full writeup (p=1/p=5/p=6)
 ├── EXPERIMENT_REPORT_B_p5.md       # Model-B p=5 experiment report
 ├── EXPERIMENT_REPORT_B_p6.md       # Model-B p=6 experiment report
