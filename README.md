@@ -20,11 +20,11 @@ Experiments on top of [Therm-FM](https://github.com/haiyangxin/Therm-FM) (arXiv 
 |---|---|---|---|---|---|---|---|
 | Baseline-B | L1 (p=1) | 0.02327 | 0.4177 | 0.007822 | 0.1237% | — | **-70%** RMSE |
 | **Grad-Weight-B** | **GW-L1 (p=5)** | **0.02219** | **0.4035** | **0.007616** | **0.1210%** | Max **-3.4%**, PAPE **-2.1%** | **-40%** RMSE vs T p=6 |
-| Combined-B (p=6) | GW-L1 + Interface | — | — | — | — | pending | — |
+| **Combined-B** | **GW-L1 + Interface (p=6)** | **0.02051** | **0.3688** | **0.007021** | **0.1109%** | Max **-11.7%**, PAPE **-10.3%** | **-44%** RMSE vs T p=6 |
 
 > Dataset: HS-SC-refine1 (HotSpot South-China chip, 55×55, 5000 samples, 80/20 train-test)
 
-**Key finding (Model-B):** Model scale dominates loss function choice. Model-B baseline (157.6M) already beats Model-T p=6 combined (21M) by 40% RMSE. Gradient weighting still improves Model-B by ~4.6% RMSE, but returns are diminishing at this scale.
+**Key finding (Model-B):** Model scale dominates, but loss functions still matter. Model-B baseline (157.6M) already beats Model-T p=6 (21M) by 44% RMSE. The p=5 → p=6 chain adds -11.8% cumulative RMSE vs Model-B baseline. **Warm-start is required for p=6** — cold-start causes loss-metric mismatch (+12% RMSE despite lower eval_loss).
 
 ## Repository Structure
 
@@ -32,12 +32,14 @@ Experiments on top of [Therm-FM](https://github.com/haiyangxin/Therm-FM) (arXiv 
 ├── README.md                       # This file
 ├── EXPERIMENT_REPORT.md            # Model-T full writeup (p=1/p=5/p=6)
 ├── EXPERIMENT_REPORT_B_p5.md       # Model-B p=5 experiment report
+├── EXPERIMENT_REPORT_B_p6.md       # Model-B p=6 experiment report
 ├── DATASET.md                      # Dataset description
 ├── configs/
 │   ├── run_exp_gradweight_T.yaml      # Model-T p=5 config
 │   ├── run_exp_combined_T.yaml        # Model-T p=6 config
 │   ├── run_exp_baseline_B.yaml        # Model-B p=1 config
-│   └── run_exp_gradweight_B.yaml      # Model-B p=5 config
+│   ├── run_exp_gradweight_B.yaml      # Model-B p=5 config
+│   └── run_exp_combined_B.yaml        # Model-B p=6 config
 ├── patches/
 │   ├── model_loss_extensions.patch    # Diff for scOT/model.py
 │   └── train_nan_fix.patch            # Diff for scOT/train.py
@@ -46,7 +48,8 @@ Experiments on top of [Therm-FM](https://github.com/haiyangxin/Therm-FM) (arXiv 
     ├── gradweight_metrics.json        # Model-T p=5
     ├── combined_metrics_001.json      # Model-T p=6 (lambda=0.001, final)
     ├── baseline_metrics_B.json        # Model-B p=1
-    └── gradweight_metrics_B.json      # Model-B p=5
+    ├── gradweight_metrics_B.json      # Model-B p=5
+    └── combined_metrics_B.json        # Model-B p=6
 ```
 
 ## Quick Start

@@ -1,0 +1,36 @@
+{
+  "experiment": "combined_B_from_p5",
+  "loss_fn": "GW-L1 + Interface (p=6, alpha=1.0, lambda=0.001)",
+  "dataset": "HS_SC_refine1",
+  "model": "Therm-FM-B (157.6M params)",
+  "hardware": "AWS g6e.4xlarge (NVIDIA L40S 46GB)",
+  "epochs": 200,
+  "batch_size": 16,
+  "lr": 0.00005,
+  "pretrained_from": "checkpoints/exp/gradweight_B/.../checkpoint-45000 (p=5 warm-start)",
+  "eval_loss_final": 0.0012080461019650102,
+  "rmse": 0.020512604787728674,
+  "r2": 0.9999846975505352,
+  "max_absolute_error": 0.3688497467041016,
+  "mean_absolute_error": 0.007020542879588902,
+  "mape_percent": 0.0020931128718771333,
+  "pape_percent": 0.11092565291764914,
+  "vs_baseline_B": {
+    "rmse_delta_pct": -11.8,
+    "max_error_delta_pct": -11.7,
+    "mae_delta_pct": -10.2,
+    "pape_delta_pct": -10.3
+  },
+  "vs_gradweight_B": {
+    "rmse_delta_pct": -7.5,
+    "max_error_delta_pct": -8.6,
+    "mae_delta_pct": -7.8,
+    "pape_delta_pct": -8.4
+  },
+  "vs_combined_T": {
+    "rmse_delta_pct": -44.4,
+    "max_error_delta_pct": -40.0,
+    "mae_delta_pct": -47.0,
+    "pape_delta_pct": -37.0
+  }
+}
