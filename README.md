@@ -6,38 +6,47 @@ Experiments on top of [Therm-FM](https://github.com/haiyangxin/Therm-FM) (arXiv 
 
 ## Results Summary
 
+### Model-T (21M params) — NVIDIA T4
+
 | Experiment | Loss | RMSE (°C) | Max Error (°C) | MAE (°C) | PAPE (%) | vs Baseline |
 |---|---|---|---|---|---|---|
-| Baseline | L1 (p=1) | 0.0765 | 1.444 | 0.02105 | 0.396% | — |
-| Grad-Weight | GW-L1 (p=5) | 0.0520 | 0.858 | 0.01779 | 0.242% | Max **-41%**, PAPE **-39%** |
-| **Combined** | **GW-L1 + Interface (p=6)** | **0.0369** | **0.615** | **0.01325** | **0.176%** | Max **-57%**, PAPE **-56%** |
+| Baseline-T | L1 (p=1) | 0.0765 | 1.444 | 0.02105 | 0.396% | — |
+| Grad-Weight-T | GW-L1 (p=5) | 0.0520 | 0.858 | 0.01779 | 0.242% | Max **-41%**, PAPE **-39%** |
+| **Combined-T** | **GW-L1 + Interface (p=6)** | **0.0369** | **0.615** | **0.01325** | **0.176%** | Max **-57%**, PAPE **-56%** |
 
-All experiments: dataset HS-SC-refine1, model Therm-FM-T (21M params), 200 epochs on NVIDIA T4.
+### Model-B (157.6M params) — NVIDIA L40S
 
-The p=6 combined loss roughly **halves baseline error** on the two metrics that matter most for thermal sign-off (Max Error and PAPE). It adds a binary hard penalty at the ~2% of pixels above `mean + 2σ` gradient magnitude on top of the continuous soft weighting from p=5.
-
-**Key finding:** p=6 must be warm-started from a converged p=5 checkpoint. Starting from the pretrained base directly causes `loss: inf` at step 1 due to random embedding initialization interacting with gradient-weighted amplification. Warm-start bypasses this entirely.
+| Experiment | Loss | RMSE (°C) | Max Error (°C) | MAE (°C) | PAPE (%) | vs Baseline-B | vs Best T |
+|---|---|---|---|---|---|---|---|
+| Baseline-B | L1 (p=1) | 0.02327 | 0.4177 | 0.007822 | 0.1237% | — | **-70%** RMSE |
+| **Grad-Weight-B** | **GW-L1 (p=5)** | **0.02219** | **0.4035** | **0.007616** | **0.1210%** | Max **-3.4%**, PAPE **-2.1%** | **-40%** RMSE vs T p=6 |
+| Combined-B (p=6) | GW-L1 + Interface | — | — | — | — | pending | — |
 
 > Dataset: HS-SC-refine1 (HotSpot South-China chip, 55×55, 5000 samples, 80/20 train-test)
-> Model: Therm-FM-T (21M params, SwinV2 encoder + ConvNeXt decoder)
+
+**Key finding (Model-B):** Model scale dominates loss function choice. Model-B baseline (157.6M) already beats Model-T p=6 combined (21M) by 40% RMSE. Gradient weighting still improves Model-B by ~4.6% RMSE, but returns are diminishing at this scale.
 
 ## Repository Structure
 
 ```
-├── README.md                    # This file
-├── EXPERIMENT_REPORT.md         # Full end-to-end writeup
-├── DATASET.md                   # Dataset description
+├── README.md                       # This file
+├── EXPERIMENT_REPORT.md            # Model-T full writeup (p=1/p=5/p=6)
+├── EXPERIMENT_REPORT_B_p5.md       # Model-B p=5 experiment report
+├── DATASET.md                      # Dataset description
 ├── configs/
-│   ├── run_exp_gradweight_T.yaml   # p=5 training config
-│   └── run_exp_combined_T.yaml     # p=6 training config
+│   ├── run_exp_gradweight_T.yaml      # Model-T p=5 config
+│   ├── run_exp_combined_T.yaml        # Model-T p=6 config
+│   ├── run_exp_baseline_B.yaml        # Model-B p=1 config
+│   └── run_exp_gradweight_B.yaml      # Model-B p=5 config
 ├── patches/
-│   ├── model_loss_extensions.patch  # Diff for scOT/model.py
-│   └── train_nan_fix.patch          # Diff for scOT/train.py
+│   ├── model_loss_extensions.patch    # Diff for scOT/model.py
+│   └── train_nan_fix.patch            # Diff for scOT/train.py
 └── results/
-    ├── baseline_metrics.json
-    ├── gradweight_metrics.json
-    ├── combined_metrics.json         # p=6 lambda=0.05 (failed to converge)
-    └── combined_metrics_001.json     # p=6 lambda=0.001 (final results)
+    ├── baseline_metrics.json          # Model-T p=1
+    ├── gradweight_metrics.json        # Model-T p=5
+    ├── combined_metrics_001.json      # Model-T p=6 (lambda=0.001, final)
+    ├── baseline_metrics_B.json        # Model-B p=1
+    └── gradweight_metrics_B.json      # Model-B p=5
 ```
 
 ## Quick Start

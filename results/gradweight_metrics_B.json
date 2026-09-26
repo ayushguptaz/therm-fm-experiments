@@ -1,0 +1,30 @@
+{
+  "experiment": "gradweight_p5_B",
+  "loss_fn": "Gradient-Weighted L1 (p=5, alpha=1.0)",
+  "dataset": "HS_SC_refine1",
+  "model": "Therm-FM-B (157.6M params)",
+  "hardware": "AWS g6e.2xlarge (NVIDIA L40S 46GB)",
+  "epochs": 200,
+  "batch_size": 16,
+  "lr": 0.00005,
+  "pretrained_from": "camlab-ethz/poseidon-B",
+  "eval_loss_final": 0.001360435620881617,
+  "rmse": 0.02218876724682145,
+  "r2": 0.9999832463264465,
+  "max_absolute_error": 0.40347520446777346,
+  "mean_absolute_error": 0.007615614661714062,
+  "mape_percent": 0.002261483746557826,
+  "pape_percent": 0.12104433271742891,
+  "vs_baseline_B": {
+    "rmse_delta_pct": -4.6,
+    "max_error_delta_pct": -3.4,
+    "mae_delta_pct": -2.6,
+    "pape_delta_pct": -2.1
+  },
+  "vs_gradweight_T": {
+    "rmse_delta_pct": -57.3,
+    "max_error_delta_pct": -53.0,
+    "mae_delta_pct": -57.2,
+    "pape_delta_pct": -50.0
+  }
+}

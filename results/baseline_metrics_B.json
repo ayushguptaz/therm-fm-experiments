@@ -1,0 +1,18 @@
+{
+  "experiment": "baseline_B",
+  "loss_fn": "L1 (p=1)",
+  "dataset": "HS_SC_refine1",
+  "model": "Therm-FM-B (157.6M params)",
+  "hardware": "AWS g6e.2xlarge (NVIDIA L40S 46GB)",
+  "epochs": 200,
+  "batch_size": 16,
+  "lr": 0.00005,
+  "pretrained_from": "camlab-ethz/poseidon-B",
+  "eval_loss_final": 0.002354973927140236,
+  "rmse": 0.0232693211203044,
+  "r2": 0.9999821430444717,
+  "max_absolute_error": 0.41770425415039064,
+  "mean_absolute_error": 0.007821884638164193,
+  "mape_percent": 0.0023158445024058704,
+  "pape_percent": 0.1236941947026935
+}
