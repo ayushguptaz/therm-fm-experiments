@@ -1,0 +1,29 @@
+{
+  "experiment": "combined_p6_lambda001",
+  "loss_fn": "Gradient-Weighted L1 + Interface Penalty (p=6, alpha=1.0, lambda=0.001)",
+  "dataset": "HS_SC_refine1",
+  "model": "Therm-FM-T (21M params)",
+  "epochs": 200,
+  "training_strategy": "warm_start_from_p5_checkpoint",
+  "starting_checkpoint": "gradweight_T/ThermFM-exp/gradweight_T_HS_SC_r1/checkpoint-17910",
+  "eval_loss_normalized": 0.002643,
+  "rmse": 0.03693512560492875,
+  "r2": 0.9999609269201756,
+  "max_absolute_error": 0.614655502319336,
+  "mean_absolute_error": 0.013247659042943269,
+  "mape_percent": 0.0038957747122486323,
+  "pape_percent": 0.17576358083460947,
+  "vs_baseline": {
+    "rmse_delta_pct": -51.7,
+    "max_error_delta_pct": -57.5,
+    "mae_delta_pct": -37.1,
+    "pape_delta_pct": -55.6
+  },
+  "vs_p5": {
+    "rmse_delta_pct": -28.9,
+    "max_error_delta_pct": -28.4,
+    "mae_delta_pct": -25.5,
+    "pape_delta_pct": -27.4
+  },
+  "notes": "Training p=6 directly from poseidon-T-converted diverged (inf loss at step 1). Warm-starting from a converged p=5 checkpoint bypasses the random-init amplification problem. Interface threshold: grad_mag > mean + 2*std."
+}

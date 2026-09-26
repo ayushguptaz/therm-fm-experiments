@@ -74,7 +74,9 @@ Two complementary effects:
 
 Together: every pixel weighted proportionally to gradient, **plus** an explicit extra penalty at the true interface locations.
 
-**Config:** `configs/run_exp_combined_T.yaml` with `p: 6`, `grad_weight_alpha: 1.0`, `interface_lambda: 0.05`
+**Config:** `configs/run_exp_combined_T.yaml` with `p: 6`, `grad_weight_alpha: 1.0`, `interface_lambda: 0.001`
+
+**Training strategy:** Warm-started from the converged p=5 checkpoint. Starting p=6 directly from the pretrained base (`poseidon-T-converted`) diverges at step 1 (`loss: inf`). See "Bugs Encountered" section for details.
 
 ---
 
@@ -198,9 +200,30 @@ for name, param in model.named_parameters():
 | PAPE | 0.396% | **0.242%** | **-39%** |
 | R² | 0.99978 | 0.99992 | +0.00014 |
 
-### Combined (p=6) — pending
+### Combined (p=6, λ=0.001, warm-start from p=5)
 
-Results will be added when the 200-epoch run completes.
+```json
+{
+  "rmse": 0.03693512560492875,
+  "r2": 0.9999609269201756,
+  "max_absolute_error": 0.614655502319336,
+  "mean_absolute_error": 0.013247659042943269,
+  "mape_percent": 0.0038957747122486323,
+  "pape_percent": 0.17576358083460947
+}
+```
+
+### Summary Table
+
+| Metric | Baseline (p=1) | Grad-Weight (p=5) | Combined (p=6) | p=6 vs Baseline | p=6 vs p=5 |
+|---|---|---|---|---|---|
+| RMSE (°C) | 0.0765 | 0.0520 | **0.0369** | **-51.7%** | -28.9% |
+| Max Error (°C) | 1.444 | 0.858 | **0.615** | **-57.5%** | -28.4% |
+| MAE (°C) | 0.02105 | 0.01779 | **0.01325** | **-37.1%** | -25.5% |
+| PAPE (%) | 0.396% | 0.242% | **0.176%** | **-55.6%** | -27.4% |
+| R² | 0.99978 | 0.99992 | **0.99996** | — | — |
+
+The combined p=6 loss achieves the best results on all metrics, roughly halving the baseline error across RMSE, Max, and PAPE. Each stage of boundary-awareness provides compounding gains: p=5 soft gradient weighting (-41% Max) + p=6 hard interface penalty (-28% additional Max reduction).
 
 ---
 

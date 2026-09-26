@@ -31,4 +31,4 @@ p:
 grad_weight_alpha:
   value: 1.0
 interface_lambda:
-  value: 0.05
+  value: 0.001
