@@ -1,0 +1,48 @@
+{
+  "experiment": "Multi-chip GW-L2 alpha=0.1",
+  "model": "Model-T (20.7M)",
+  "loss": "Gradient-weighted L2 (p=7), alpha=0.1",
+  "formula": "mean([(1 + 0.1 * grad_mag) / mean(1 + 0.1 * grad_mag)] * (pred - label)^2)",
+  "init": "Poseidon-T cold-start",
+  "epochs": 200,
+  "batch_size": 40,
+  "lr": 0.00005,
+  "machine": "Machine 1 (L40S 48GB)",
+  "results": {
+    "HS_SC_refine1": {
+      "rmse": 0.05127395689487457,
+      "max_error": 1.229034423828125,
+      "mae": 0.028340885415673256,
+      "pape_pct": 0.1665392816066742,
+      "n_test": 1000
+    },
+    "HS_QC_refine1": {
+      "rmse": 0.0911276787519455,
+      "max_error": 1.764068603515625,
+      "mae": 0.06581408530473709,
+      "pape_pct": 0.14376968145370483,
+      "n_test": 1000
+    },
+    "HS_OC_refine1": {
+      "rmse": 0.12259560823440552,
+      "max_error": 7.2281494140625,
+      "mae": 0.07796861231327057,
+      "pape_pct": 0.5061533451080322,
+      "n_test": 1000
+    },
+    "IND_8C": {
+      "rmse": 0.03153935447335243,
+      "max_error": 0.89312744140625,
+      "mae": 0.023057013750076294,
+      "pape_pct": 0.12784810364246368,
+      "n_test": 100
+    },
+    "IND_32C": {
+      "rmse": 0.029283413663506508,
+      "max_error": 0.722198486328125,
+      "mae": 0.021444221958518028,
+      "pape_pct": 0.09945837408304214,
+      "n_test": 100
+    }
+  }
+}

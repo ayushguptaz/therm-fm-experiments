@@ -1,0 +1,47 @@
+{
+  "experiment": "Multi-chip L2 Baseline",
+  "model": "Model-T (20.7M)",
+  "loss": "L2/MSE (p=2) — paper baseline",
+  "init": "Poseidon-T cold-start",
+  "epochs": 200,
+  "batch_size": 40,
+  "lr": 0.00005,
+  "machine": "Naveen VM (T4 16GB)",
+  "results": {
+    "HS_SC_refine1": {
+      "rmse": 0.05184050276875496,
+      "max_error": 1.2711181640625,
+      "mae": 0.028229352086782455,
+      "pape_pct": 0.16922172904014587,
+      "n_test": 1000
+    },
+    "HS_QC_refine1": {
+      "rmse": 0.09351421892642975,
+      "max_error": 1.781280517578125,
+      "mae": 0.06784424185752869,
+      "pape_pct": 0.14502424001693726,
+      "n_test": 1000
+    },
+    "HS_OC_refine1": {
+      "rmse": 0.12322643399238586,
+      "max_error": 7.20849609375,
+      "mae": 0.07733365148305893,
+      "pape_pct": 0.5281566381454468,
+      "n_test": 1000
+    },
+    "IND_8C": {
+      "rmse": 0.03237319737672806,
+      "max_error": 0.8961181640625,
+      "mae": 0.02367282286286354,
+      "pape_pct": 0.12991154193878174,
+      "n_test": 100
+    },
+    "IND_32C": {
+      "rmse": 0.02965519018471241,
+      "max_error": 0.731658935546875,
+      "mae": 0.021728556603193283,
+      "pape_pct": 0.09978063404560089,
+      "n_test": 100
+    }
+  }
+}
