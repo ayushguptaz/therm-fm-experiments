@@ -1,0 +1,34 @@
+{
+  "experiment": "Multi-chip L2 Baseline (paper-exact metrics)",
+  "model": "Model-T (20.7M)",
+  "loss": "L2/MSE (p=2)",
+  "init": "Poseidon-T cold-start",
+  "epochs": 200,
+  "batch_size": 40,
+  "lr": 0.00005,
+  "dataset": "refine1 (HS: 55x55/85x85, IND: 101x101)",
+  "eval_method": "paper-exact: mean over samples of per-sample per-channel metrics",
+  "machine": "Naveen VM (T4 16GB)",
+  "results": {
+    "HS_SC_refine1": {
+      "rmse": 0.0511, "max_error": 0.5611, "mae": 0.02823,
+      "mape_pct": 0.008, "pape_pct": 0.162, "n_test": 1000
+    },
+    "HS_QC_refine1": {
+      "rmse": 0.0900, "max_error": 0.5120, "mae": 0.06784,
+      "mape_pct": 0.018, "pape_pct": 0.134, "n_test": 1000
+    },
+    "HS_OC_refine1": {
+      "rmse": 0.1171, "max_error": 1.1979, "mae": 0.07733,
+      "mape_pct": 0.023, "pape_pct": 0.333, "n_test": 1000
+    },
+    "IND_8C": {
+      "rmse": 0.0322, "max_error": 0.3947, "mae": 0.02367,
+      "mape_pct": 0.007, "pape_pct": 0.111, "n_test": 100
+    },
+    "IND_32C": {
+      "rmse": 0.0294, "max_error": 0.2917, "mae": 0.02173,
+      "mape_pct": 0.006, "pape_pct": 0.082, "n_test": 100
+    }
+  }
+}

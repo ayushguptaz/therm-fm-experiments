@@ -1,0 +1,35 @@
+{
+  "experiment": "Multi-chip GW-L2 alpha=0.5 (paper-exact metrics)",
+  "model": "Model-T (20.7M)",
+  "loss": "Gradient-weighted L2 (p=7), alpha=0.5",
+  "formula": "mean([(1 + 0.5*grad_mag) / mean(1 + 0.5*grad_mag)] * (pred - label)^2)",
+  "init": "Poseidon-T cold-start",
+  "epochs": 200,
+  "batch_size": 40,
+  "lr": 0.00005,
+  "dataset": "refine1 (HS: 55x55/85x85, IND: 101x101)",
+  "eval_method": "paper-exact: mean over samples of per-sample per-channel metrics",
+  "machine": "Machine 1 (L40S 48GB)",
+  "results": {
+    "HS_SC_refine1": {
+      "rmse": 0.0487, "max_error": 0.5216, "mae": 0.02805,
+      "mape_pct": 0.008, "pape_pct": 0.152, "n_test": 1000
+    },
+    "HS_QC_refine1": {
+      "rmse": 0.0886, "max_error": 0.5116, "mae": 0.06659,
+      "mape_pct": 0.017, "pape_pct": 0.134, "n_test": 1000
+    },
+    "HS_OC_refine1": {
+      "rmse": 0.1167, "max_error": 1.1282, "mae": 0.07833,
+      "mape_pct": 0.023, "pape_pct": 0.315, "n_test": 1000
+    },
+    "IND_8C": {
+      "rmse": 0.0314, "max_error": 0.3913, "mae": 0.02305,
+      "mape_pct": 0.006, "pape_pct": 0.110, "n_test": 100
+    },
+    "IND_32C": {
+      "rmse": 0.0290, "max_error": 0.2929, "mae": 0.02143,
+      "mape_pct": 0.006, "pape_pct": 0.082, "n_test": 100
+    }
+  }
+}
