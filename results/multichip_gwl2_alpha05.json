@@ -1,0 +1,49 @@
+{
+  "experiment": "Multi-chip GW-L2 alpha=0.5",
+  "model": "Model-T (20.7M)",
+  "loss": "Gradient-weighted L2 (p=7), alpha=0.5",
+  "formula": "mean([(1 + 0.5 * grad_mag) / mean(1 + 0.5 * grad_mag)] * (pred - label)^2)",
+  "init": "Poseidon-T cold-start",
+  "epochs": 200,
+  "batch_size": 40,
+  "lr": 0.00005,
+  "dataset": "refine1 (55x55 for HS chips)",
+  "machine": "Machine 1 (L40S 48GB)",
+  "results": {
+    "HS_SC_refine1": {
+      "rmse": 0.04933010786771774,
+      "max_error": 1.018646240234375,
+      "mae": 0.028054948896169662,
+      "pape_pct": 0.1596982628107071,
+      "n_test": 1000
+    },
+    "HS_QC_refine1": {
+      "rmse": 0.09212516248226166,
+      "max_error": 1.729156494140625,
+      "mae": 0.06659002602100372,
+      "pape_pct": 0.14600388705730438,
+      "n_test": 1000
+    },
+    "HS_OC_refine1": {
+      "rmse": 0.12211477756500244,
+      "max_error": 6.888214111328125,
+      "mae": 0.07832613587379456,
+      "pape_pct": 0.46381694078445435,
+      "n_test": 1000
+    },
+    "IND_8C": {
+      "rmse": 0.03152443841099739,
+      "max_error": 0.906036376953125,
+      "mae": 0.023054156452417374,
+      "pape_pct": 0.12853120267391205,
+      "n_test": 100
+    },
+    "IND_32C": {
+      "rmse": 0.029290631413459778,
+      "max_error": 0.727996826171875,
+      "mae": 0.0214267335832119,
+      "pape_pct": 0.09989364445209503,
+      "n_test": 100
+    }
+  }
+}
