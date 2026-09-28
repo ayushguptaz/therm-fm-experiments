@@ -1,0 +1,107 @@
+Therm-FM Resolution Increment Experiment Plan
+==============================================
+
+Goal
+----
+Test whether training on higher-resolution mesh data (refine2) improves model accuracy
+compared to the standard lower-resolution data (refine1), and whether the gradient-weighted
+loss (GW-L2 alpha=0.5) advantage holds at higher resolution.
+
+
+Resolution Definitions
+-----------------------
+Chip         | refine1       | refine2       | Notes
+-------------|---------------|---------------|------------------------------
+HS_SC        | 55 x 55       | 87 x 87       | HotSpot South-China
+HS_QC        | ~55 x 55      | 63 x 63       | HotSpot Quad-Core
+HS_OC        | 85 x 85       | 151 x 151     | HotSpot Octa-Core (largest)
+IND_8C       | 101 x 101     | 101 x 101     | Industry 8-chip (no refine2)
+IND_32C      | 101 x 101     | 101 x 101     | Industry 32-chip (no refine2)
+
+
+Experiments
+-----------
+Two runs, executed in parallel across two machines:
+
+Run A — Baseline L2 (paper-exact)
+  Machine   : Naveen VM (T4 16GB, 136.113.232.111)
+  Loss      : p=2, standard MSE: loss = mean((pred - label)^2)
+  Config    : configs/refine2_exp/baseline_L2_HS.yaml  (HS chips, train_ratio=0.8)
+              configs/refine2_exp/baseline_L2_IND.yaml (IND chips, train_ratio=0.9)
+  Purpose   : Reproduce paper's exact training on refine2 data; establish new baseline
+
+Run B — Gradient-Weighted L2 alpha=0.5
+  Machine   : Machine 1 (L40S 48GB, 100.54.108.10)
+  Loss      : p=7, GW-L2:
+                dT_dx = labels[:,:,:,1:] - labels[:,:,:,:-1]  (padded)
+                dT_dy = labels[:,:,1:,:] - labels[:,:,:-1,:]  (padded)
+                grad_mag = sqrt(dT_dx^2 + dT_dy^2 + 1e-8)
+                weights = (1 + 0.5 * grad_mag) / mean(weights)
+                loss = mean(weights * (pred - label)^2)
+  Config    : configs/refine2_exp/gwl2_a05_HS.yaml  (HS chips)
+              configs/refine2_exp/gwl2_a05_IND.yaml (IND chips)
+  Purpose   : Test whether gradient weighting still helps at higher resolution
+
+Both runs:
+  Model     : Therm-FM-T (Model-T, 20.7M params, embed_dim=48, depths=[4,4,4,4])
+  Init      : Poseidon-T cold-start (--replace_embedding_recovery)
+  Epochs    : 200, batch=40, lr=5e-5, cosine LR, AdamW, weight_decay=1e-6
+  Stats     : --stats_json with paper's precomputed normalization constants
+  Eval      : Paper-exact formulas — mean over samples of per-sample per-channel metrics
+
+
+Evaluation Script
+-----------------
+eval_multichip_v2.py with --refine2 flag
+Metrics: RMSE, Max Error, MAE, MAPE%, PAPE%
+Formula: for each sample, for each channel: compute metric, average over channels,
+         then average over samples. (Matches paper's _compute_additional_test_metrics)
+
+
+Chips run order
+---------------
+Naveen (baseline): HS_SC → HS_QC → HS_OC → IND_8C → IND_32C  (sequential)
+Machine 1 (GW-L2): HS_SC → HS_QC → IND_8C → IND_32C → HS_OC  (HS_OC last, largest file)
+
+
+Partial Results (as of 2026-09-28)
+------------------------------------
+HS_SC_refine2 (87x87, n_test=1000):
+  Metric        Baseline L2    GW-L2 a=0.5    Delta
+  RMSE (K)      0.0390         0.0388         -0.5%
+  Max Error (K) 0.4862         0.4602         -5.3%
+  MAE (K)       0.02130        0.02214        +3.9%
+  MAPE (%)      0.006          0.007          --
+  PAPE (%)      0.133          0.127          -4.5%
+
+HS_QC_refine2 (63x63, n_test=1000):
+  Metric        Baseline L2    GW-L2 a=0.5    Delta
+  RMSE (K)      0.0851         0.0863         +1.4%
+  Max Error (K) 0.6559         0.6659         +1.5%
+  MAE (K)       0.06390        0.06477        +1.4%
+  MAPE (%)      0.017          0.017          0%
+  PAPE (%)      0.171          0.174          +1.8%
+
+HS_OC_refine2 (151x151): Both runs in progress (Naveen ~4h, Machine 1 ~3h)
+IND_8C, IND_32C: Both runs in progress
+
+
+Key Hypothesis
+--------------
+Higher-resolution mesh already encodes gradient structure in the training data,
+leaving less room for explicit gradient weighting in the loss function to add value.
+
+Refine1 findings: GW-L2 cut RMSE by 4.7% on HS_SC, 1.6% on HS_QC.
+Refine2 findings (partial): GW-L2 gives near-zero change in RMSE (-0.5%, +1.4%).
+Max Error and PAPE still slightly better with GW-L2 on HS_SC.
+
+This suggests GW-L2 is most useful when the training mesh is coarse and the model
+must learn boundary behavior from lower-resolution signals.
+
+
+Comparison Targets
+------------------
+1. Refine1 baseline  vs  Refine2 baseline   → effect of resolution alone
+2. Refine1 GW-L2     vs  Refine2 GW-L2      → does GW-L2 benefit scale with resolution?
+3. Refine2 baseline  vs  Refine2 GW-L2      → is GW-L2 still worth it at high resolution?
+4. All results vs paper Table II-IV (Therm-FM-T column)
