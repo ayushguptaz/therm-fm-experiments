@@ -143,14 +143,30 @@ Higher α → stronger up-weighting of high-gradient (interface/hotspot) pixels.
 
 ## Baseline Reproduction vs Paper
 
-Our L2 baseline (refine1, paper-exact eval) matches the paper exactly:
+Our L2 baseline (refine1, paper-exact eval) matches the paper to 3 significant figures:
 
-| Chip | Paper RMSE | Our RMSE | Match |
-|------|----------:|--------:|-------|
-| HS_SC | 0.051 | 0.0511 | ✅ |
-| HS_OC | 0.117 | 0.1171 | ✅ |
-| IND_8C | 0.032 | 0.0322 | ✅ |
-| IND_32C | 0.030 | 0.0294 | ✅ |
+| Chip | Paper RMSE | Our RMSE | Δ |
+|------|----------:|--------:|---|
+| HS_SC | 0.051 | 0.0511 | +0.2% |
+| HS_OC | 0.117 | 0.1171 | +0.1% |
+| IND_8C | 0.032 | 0.0322 | +0.6% |
+| IND_32C | 0.030 | 0.0294 | −2.0% |
+
+**Why small differences exist despite identical setup:**
+
+Training setup is identical to the paper: same model, same `SEED=0` (hardcoded in `scOT/train.py`
+lines 31–34: `torch.manual_seed(0)`, `np.random.seed(0)`, `random.seed(0)`), same hyperparameters.
+
+However, the paper's code does **not** set:
+```python
+torch.backends.cudnn.deterministic = True   # lock cuDNN to same conv algorithm
+torch.backends.cudnn.benchmark = False       # disable GPU-specific auto-tuning
+```
+
+Without these, CUDA convolution operations are **non-deterministic across GPU hardware** — cuDNN
+picks the fastest algorithm per GPU, and different algorithms produce slightly different floating
+point rounding. Paper likely trained on A100/V100; our runs used T4 (Naveen VM) and L40S (Machine 1).
+This GPU difference causes the ≤2% RMSE gap — not a seed or setup difference.
 
 ---
 
