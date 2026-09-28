@@ -27,62 +27,59 @@ Higher α → stronger up-weighting of high-gradient (interface/hotspot) pixels.
 **Machines:** Baseline L2 & GW-L2 α=0.1 on AWS T4 16GB; GW-L2 α=0.5 on L40S 48GB  
 **Note:** GW-L2 α=0.1 eval used old aggregation formula (not paper-exact) — RMSE directionally correct
 
-> **Eval formula note for GW-L2 α=0.1:** RMSE, MAE, PAPE used the old global aggregation formula
-> (single mean/max over all samples×pixels). Max Error† = global worst pixel across all test samples,
-> not the per-sample average used by paper-exact. MAPE was not computed. RMSE and MAE are close
-> (~1–3% difference); Max Error† is NOT comparable to other columns (typically 2–3× higher).
+> **GW-L2 α=0.1 note:** evaluated with old global aggregation formula (not paper-exact);
+> only RMSE is shown as it is approximately comparable. Other metrics omitted to avoid
+> misleading comparisons (checkpoint no longer available for re-evaluation).
 
 ### HS_SC_refine1 — 55×55 (n_test=1000)
 
 | Metric | Paper T | Baseline L2 | GW-L2 α=0.1 | GW-L2 α=0.5 | α=0.5 vs Base | α=0.5 vs Paper |
 |--------|--------:|------------:|------------:|------------:|--------------:|---------------:|
 | RMSE (K) | 0.051 | 0.0511 | 0.0513 | **0.0487** | −4.7% | **−4.5%** |
-| Max Error (K) | 0.558 | 0.5611 | 1.229† | **0.5216** | −7.0% | **−6.5%** |
-| MAE (K) | 0.028 | 0.02823 | 0.02834 | **0.02805** | −0.6% | +0.2% |
-| MAPE (%) | 0.008 | 0.008 | n/c | 0.008 | — | — |
-| PAPE (%) | 0.161 | 0.162 | 0.167 | **0.152** | −6.2% | **−5.6%** |
+| Max Error (K) | 0.558 | 0.5611 | — | **0.5216** | −7.0% | **−6.5%** |
+| MAE (K) | 0.028 | 0.02823 | — | **0.02805** | −0.6% | +0.2% |
+| MAPE (%) | 0.008 | 0.008 | — | 0.008 | — | — |
+| PAPE (%) | 0.161 | 0.162 | — | **0.152** | −6.2% | **−5.6%** |
 
 ### HS_QC_refine1 — 55×55 (n_test=1000) *(no paper number)*
 
 | Metric | Baseline L2 | GW-L2 α=0.1 | GW-L2 α=0.5 | α=0.5 vs Base |
 |--------|------------:|------------:|------------:|--------------:|
 | RMSE (K) | 0.0900 | 0.0911 | **0.0886** | −1.6% |
-| Max Error (K) | 0.5120 | 1.764† | **0.5116** | −0.1% |
-| MAE (K) | 0.06784 | 0.06581 | **0.06659** | −1.8% |
-| MAPE (%) | 0.018 | n/c | **0.017** | — |
-| PAPE (%) | 0.134 | 0.144 | 0.134 | 0.0% |
+| Max Error (K) | 0.5120 | — | **0.5116** | −0.1% |
+| MAE (K) | 0.06784 | — | **0.06659** | −1.8% |
+| MAPE (%) | 0.018 | — | **0.017** | — |
+| PAPE (%) | 0.134 | — | 0.134 | 0.0% |
 
 ### HS_OC_refine1 — 85×85 (n_test=1000)
 
 | Metric | Paper T | Baseline L2 | GW-L2 α=0.1 | GW-L2 α=0.5 | α=0.5 vs Base | α=0.5 vs Paper |
 |--------|--------:|------------:|------------:|------------:|--------------:|---------------:|
 | RMSE (K) | 0.117 | 0.1171 | 0.1226 | **0.1167** | −0.3% | −0.3% |
-| Max Error (K) | 1.198 | 1.1979 | 7.228† | **1.1282** | −5.8% | **−5.8%** |
-| MAE (K) | 0.077 | 0.07733 | 0.07797 | 0.07833 | +1.3% | +1.7% |
-| MAPE (%) | 0.023 | 0.023 | n/c | 0.023 | — | — |
-| PAPE (%) | 0.334 | 0.333 | 0.506 | **0.315** | −5.4% | **−5.7%** |
+| Max Error (K) | 1.198 | 1.1979 | — | **1.1282** | −5.8% | **−5.8%** |
+| MAE (K) | 0.077 | 0.07733 | — | 0.07833 | +1.3% | +1.7% |
+| MAPE (%) | 0.023 | 0.023 | — | 0.023 | — | — |
+| PAPE (%) | 0.334 | 0.333 | — | **0.315** | −5.4% | **−5.7%** |
 
 ### IND_8C — 101×101 (n_test=100)
 
 | Metric | Paper T | Baseline L2 | GW-L2 α=0.1 | GW-L2 α=0.5 | α=0.5 vs Base | α=0.5 vs Paper |
 |--------|--------:|------------:|------------:|------------:|--------------:|---------------:|
 | RMSE (K) | 0.032 | 0.0322 | 0.0315 | **0.0314** | −2.5% | **−1.9%** |
-| Max Error (K) | 0.393 | 0.3947 | 0.893† | **0.3913** | −0.9% | −0.4% |
-| MAE (K) | 0.024 | 0.02367 | 0.02306 | **0.02305** | −2.6% | −4.0% |
-| MAPE (%) | 0.007 | 0.007 | n/c | **0.006** | — | — |
-| PAPE (%) | 0.111 | 0.111 | 0.128 | **0.110** | −0.9% | −0.9% |
+| Max Error (K) | 0.393 | 0.3947 | — | **0.3913** | −0.9% | −0.4% |
+| MAE (K) | 0.024 | 0.02367 | — | **0.02305** | −2.6% | −4.0% |
+| MAPE (%) | 0.007 | 0.007 | — | **0.006** | — | — |
+| PAPE (%) | 0.111 | 0.111 | — | **0.110** | −0.9% | −0.9% |
 
 ### IND_32C — 101×101 (n_test=100)
 
 | Metric | Paper T | Baseline L2 | GW-L2 α=0.1 | GW-L2 α=0.5 | α=0.5 vs Base | α=0.5 vs Paper |
 |--------|--------:|------------:|------------:|------------:|--------------:|---------------:|
 | RMSE (K) | 0.030 | 0.0294 | 0.0293 | **0.0290** | −1.4% | **−3.3%** |
-| Max Error (K) | 0.293 | 0.2917 | 0.722† | 0.2929 | +0.4% | 0.0% |
-| MAE (K) | 0.022 | 0.02173 | 0.02144 | **0.02143** | −1.4% | −2.6% |
-| MAPE (%) | 0.006 | 0.006 | n/c | 0.006 | — | — |
-| PAPE (%) | 0.082 | 0.082 | 0.099 | 0.082 | — | — |
-
-*† = global worst-pixel max (not per-sample average); n/c = not computed*
+| Max Error (K) | 0.293 | 0.2917 | — | 0.2929 | +0.4% | 0.0% |
+| MAE (K) | 0.022 | 0.02173 | — | **0.02143** | −1.4% | −2.6% |
+| MAPE (%) | 0.006 | 0.006 | — | 0.006 | — | — |
+| PAPE (%) | 0.082 | 0.082 | — | 0.082 | — | — |
 
 ---
 
