@@ -1,0 +1,277 @@
+/home/ubuntu/thermfm_env/lib/python3.10/site-packages/transformers/modeling_utils.py:446: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  return torch.load(checkpoint_file, map_location="cpu")
+{
+  "device": "cuda",
+  "torch_version": "2.4.0+cu121",
+  "checkpoint": "/home/ubuntu/Therm-FM/checkpoints/multichip_exp/gwl2_a05_IND_8C/ThermFM-multichip/gwl2_a05_IND_8C",
+  "weights_sha256": "633794c27ec3379cb534d38b1569aec296a7fb51127eabeb69b4bd40c6e632d9",
+  "stats_sha256": "2c156e1584ccb39a76f86859b2231f5755ef12265e42043388281bc93fdb4caf",
+  "input_sha256": "b94b60c61cab8159253e3dd4a900b4a303bb0029e61d31f4b9a5ab4bedf29539",
+  "input_shape": [
+    8,
+    4,
+    2,
+    101,
+    101
+  ],
+  "output_shape": [
+    8,
+    2,
+    101,
+    101
+  ],
+  "loading_info": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "error_msgs": []
+  },
+  "model_load_seconds": 0.6560765400063246,
+  "forward_seconds_per_sample": [
+    0.02873279299819842,
+    0.028235080011654645,
+    0.02767505799420178,
+    0.027610445977188647,
+    0.027585745003307238,
+    0.027636896003969014,
+    0.027645596012007445,
+    0.027456872019683942
+  ],
+  "gpu_peak_allocated_bytes": 111268864,
+  "normalized_input_channel_ranges": [
+    {
+      "min": -0.9715873003005981,
+      "max": 0.5203021764755249
+    },
+    {
+      "min": -1.7149858474731445,
+      "max": 1.7149858474731445
+    },
+    {
+      "min": -1.7149858474731445,
+      "max": 1.7149858474731445
+    },
+    {
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "min": -0.6082233786582947,
+      "max": -0.6082233786582947
+    },
+    {
+      "min": -1.7149858474731445,
+      "max": 1.7149858474731445
+    },
+    {
+      "min": -1.7149858474731445,
+      "max": 1.7149858474731445
+    },
+    {
+      "min": 0.0,
+      "max": 0.0
+    }
+  ],
+  "samples": [
+    {
+      "min_K": 350.6284135390258,
+      "max_K": 355.50175936363746,
+      "mean_K": 353.25263149962586,
+      "layers": [
+        {
+          "min_K": 350.6284135390258,
+          "max_K": 353.7554804379621,
+          "mean_K": 352.202606328175,
+          "argmax_yx": [
+            100,
+            100
+          ]
+        },
+        {
+          "min_K": 353.00945304686144,
+          "max_K": 355.50175936363746,
+          "mean_K": 354.3026566710767,
+          "argmax_yx": [
+            100,
+            75
+          ]
+        }
+      ]
+    },
+    {
+      "min_K": 350.6698787260675,
+      "max_K": 355.50155482350874,
+      "mean_K": 353.2668781252172,
+      "layers": [
+        {
+          "min_K": 350.6698787260675,
+          "max_K": 353.7547158703569,
+          "mean_K": 352.22195737513596,
+          "argmax_yx": [
+            100,
+            100
+          ]
+        },
+        {
+          "min_K": 353.01595221244594,
+          "max_K": 355.50155482350874,
+          "mean_K": 354.31179887529845,
+          "argmax_yx": [
+            100,
+            75
+          ]
+        }
+      ]
+    },
+    {
+      "min_K": 350.71966255782195,
+      "max_K": 355.5014939603485,
+      "mean_K": 353.2847496979023,
+      "layers": [
+        {
+          "min_K": 350.71966255782195,
+          "max_K": 353.75355406322683,
+          "mean_K": 352.2462725575303,
+          "argmax_yx": [
+            100,
+            100
+          ]
+        },
+        {
+          "min_K": 353.024466403168,
+          "max_K": 355.5014939603485,
+          "mean_K": 354.3232268382744,
+          "argmax_yx": [
+            100,
+            75
+          ]
+        }
+      ]
+    },
+    {
+      "min_K": 350.6088186680951,
+      "max_K": 355.5006356678411,
+      "mean_K": 353.23942574681575,
+      "layers": [
+        {
+          "min_K": 350.6088186680951,
+          "max_K": 353.7544713734304,
+          "mean_K": 352.18476658828513,
+          "argmax_yx": [
+            100,
+            100
+          ]
+        },
+        {
+          "min_K": 353.0026680054982,
+          "max_K": 355.5006356678411,
+          "mean_K": 354.2940849053464,
+          "argmax_yx": [
+            100,
+            75
+          ]
+        }
+      ]
+    },
+    {
+      "min_K": 351.7655279557045,
+      "max_K": 354.95676095282727,
+      "mean_K": 353.5140120735158,
+      "layers": [
+        {
+          "min_K": 351.7655279557045,
+          "max_K": 352.99069389657944,
+          "mean_K": 352.43834925360375,
+          "argmax_yx": [
+            66,
+            6
+          ]
+        },
+        {
+          "min_K": 353.8547513619588,
+          "max_K": 354.95676095282727,
+          "mean_K": 354.5896748934279,
+          "argmax_yx": [
+            66,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "min_K": 351.76536682236303,
+      "max_K": 354.9564628822441,
+      "mean_K": 353.5147052573751,
+      "layers": [
+        {
+          "min_K": 351.76536682236303,
+          "max_K": 352.99039346136664,
+          "mean_K": 352.43942049400306,
+          "argmax_yx": [
+            66,
+            6
+          ]
+        },
+        {
+          "min_K": 353.8544107943299,
+          "max_K": 354.9564628822441,
+          "mean_K": 354.5899900207471,
+          "argmax_yx": [
+            66,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "min_K": 351.7650596279407,
+      "max_K": 354.9564108510786,
+      "mean_K": 353.5155745668946,
+      "layers": [
+        {
+          "min_K": 351.7650596279407,
+          "max_K": 352.9902282880379,
+          "mean_K": 352.44077511891453,
+          "argmax_yx": [
+            66,
+            6
+          ]
+        },
+        {
+          "min_K": 353.8535623315739,
+          "max_K": 354.9564108510786,
+          "mean_K": 354.5903740148747,
+          "argmax_yx": [
+            66,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "min_K": 351.7661850751847,
+      "max_K": 354.9571436479623,
+      "mean_K": 353.51327166230965,
+      "layers": [
+        {
+          "min_K": 351.7661850751847,
+          "max_K": 352.9910660415676,
+          "mean_K": 352.43718097887773,
+          "argmax_yx": [
+            66,
+            6
+          ]
+        },
+        {
+          "min_K": 353.854653360076,
+          "max_K": 354.9571436479623,
+          "mean_K": 354.5893623457415,
+          "argmax_yx": [
+            66,
+            5
+          ]
+        }
+      ]
+    }
+  ]
+}

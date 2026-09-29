@@ -1,0 +1,101 @@
+{
+  "sha": "6def77bf34dc98952b1b7b4e91a3a1bee17d50de",
+  "node_id": "C_kwDOUrLUU9oAKDZkZWY3N2JmMzRkYzk4OTUyYjFiN2I0ZTkxYTNhMWJlZTE3ZDUwZGU",
+  "commit": {
+    "author": {
+      "name": "Ayush Gupta",
+      "email": "ayushguptaz@users.noreply.github.com",
+      "date": "2026-09-29T19:40:21Z"
+    },
+    "committer": {
+      "name": "Ayush Gupta",
+      "email": "ayushguptaz@users.noreply.github.com",
+      "date": "2026-09-29T19:40:21Z"
+    },
+    "message": "Add Therm-FM new design pipeline: Verilog to thermal map\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "tree": {
+      "sha": "e30342f3ba57c862d4671e1458666a8f9625649c",
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/trees/e30342f3ba57c862d4671e1458666a8f9625649c"
+    },
+    "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/commits/6def77bf34dc98952b1b7b4e91a3a1bee17d50de",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/commits/6def77bf34dc98952b1b7b4e91a3a1bee17d50de",
+  "html_url": "https://github.com/ayushguptaz/therm-fm-experiments/commit/6def77bf34dc98952b1b7b4e91a3a1bee17d50de",
+  "comments_url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/commits/6def77bf34dc98952b1b7b4e91a3a1bee17d50de/comments",
+  "author": {
+    "login": "ayushguptaz",
+    "id": 94286244,
+    "node_id": "U_kgDOBZ6xpA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/94286244?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ayushguptaz",
+    "html_url": "https://github.com/ayushguptaz",
+    "followers_url": "https://api.github.com/users/ayushguptaz/followers",
+    "following_url": "https://api.github.com/users/ayushguptaz/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ayushguptaz/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ayushguptaz/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ayushguptaz/subscriptions",
+    "organizations_url": "https://api.github.com/users/ayushguptaz/orgs",
+    "repos_url": "https://api.github.com/users/ayushguptaz/repos",
+    "events_url": "https://api.github.com/users/ayushguptaz/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ayushguptaz/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "ayushguptaz",
+    "id": 94286244,
+    "node_id": "U_kgDOBZ6xpA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/94286244?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ayushguptaz",
+    "html_url": "https://github.com/ayushguptaz",
+    "followers_url": "https://api.github.com/users/ayushguptaz/followers",
+    "following_url": "https://api.github.com/users/ayushguptaz/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ayushguptaz/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ayushguptaz/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ayushguptaz/subscriptions",
+    "organizations_url": "https://api.github.com/users/ayushguptaz/orgs",
+    "repos_url": "https://api.github.com/users/ayushguptaz/repos",
+    "events_url": "https://api.github.com/users/ayushguptaz/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ayushguptaz/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "f668985929d0f6a14a94479cb43cea70015f67cc",
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/commits/f668985929d0f6a14a94479cb43cea70015f67cc",
+      "html_url": "https://github.com/ayushguptaz/therm-fm-experiments/commit/f668985929d0f6a14a94479cb43cea70015f67cc"
+    }
+  ],
+  "stats": {
+    "total": 326,
+    "additions": 326,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "60a14eb655f3b44c0b5177fe5f64ce5c98b7a706",
+      "filename": "THERM_FM_PIPELINE.md",
+      "status": "added",
+      "additions": 326,
+      "deletions": 0,
+      "changes": 326,
+      "blob_url": "https://github.com/ayushguptaz/therm-fm-experiments/blob/6def77bf34dc98952b1b7b4e91a3a1bee17d50de/THERM_FM_PIPELINE.md",
+      "raw_url": "https://github.com/ayushguptaz/therm-fm-experiments/raw/6def77bf34dc98952b1b7b4e91a3a1bee17d50de/THERM_FM_PIPELINE.md",
+      "contents_url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/contents/THERM_FM_PIPELINE.md?ref=6def77bf34dc98952b1b7b4e91a3a1bee17d50de",
+      "patch": "@@ -0,0 +1,326 @@\n+# Therm-FM: New Design Pipeline\n+## From Verilog + Constraints to Thermal Map\n+\n+---\n+\n+## Overview\n+\n+Therm-FM is a **surrogate model** — it replaces a slow thermal simulator with a fast neural\n+network after being trained on (power map → temperature) pairs. Running a new design requires:\n+\n+1. EDA flow: Verilog → placed layout → per-cell power map\n+2. Thermal simulator: power map → temperature labels (training data generation)\n+3. Fine-tune Therm-FM on those pairs\n+4. Run inference for any new power scenario\n+\n+---\n+\n+## Step 1 — Logic Synthesis\n+\n+**Input:** RTL Verilog, timing constraints (.sdc), technology library (.lib, .lef)\n+\n+**Tools:** Yosys (open-source) or Synopsys DC / Cadence Genus\n+\n+```bash\n+# Yosys example\n+yosys -p \"\n+  read_verilog design.v\n+  synth -top top_module\n+  dfflibmap -liberty tech.lib\n+  abc -liberty tech.lib\n+  write_verilog netlist.v\n+\"\n+```\n+\n+**Output:** Gate-level netlist (netlist.v)\n+\n+---\n+\n+## Step 2 — Place & Route\n+\n+**Input:** Synthesized netlist, technology LEF/DEF, floorplan constraints\n+\n+**Tools:** OpenROAD (open-source) or Cadence Innovus / Synopsys ICC2\n+\n+```bash\n+# OpenROAD\n+openroad -exit flow.tcl\n+```\n+\n+**Output:**\n+- `design.def` — placed layout (each cell has x,y coordinates)\n+- Routing info, power rails\n+\n+---\n+\n+## Step 3 — Power Analysis\n+\n+**Goal:** Get power dissipated per cell in Watts\n+\n+**Two components:**\n+- **Static (leakage):** directly from technology library\n+- **Dynamic (switching):** requires switching activity\n+\n+```bash\n+# Get switching activity from RTL simulation\n+vcs -R design.v testbench.v -o sim\n+./sim +vcd=toggle.vcd\n+\n+# PrimeTime-PX\n+pt_shell -f power_analysis.tcl   # outputs per-cell power → power.rpt\n+```\n+\n+**Open-source alternative:** OpenSTA + toggling rates from simulation\n+\n+**Output:** Per-cell power report (`power.rpt`) with cell name → Watts mapping\n+\n+---\n+\n+## Step 4 — Generate Spatial Power Map\n+\n+**Goal:** Map cell-level power → 2D grid (H×W) per die layer\n+\n+**Resolution must match the training data of the model you will fine-tune from:**\n+\n+```\n+HS_SC_refine2:  87×87\n+HS_QC_refine2:  63×63\n+HS_OC_refine2:  151×151\n+IND chips:      101×101\n+```\n+\n+**Script:** Parse DEF for cell placements + power report for cell power:\n+\n+```python\n+import numpy as np\n+\n+# chip physical dimensions in meters\n+chip_W_m = 1e-3          # e.g. 1 mm\n+chip_H_m = 1e-3\n+grid_H, grid_W = 87, 87  # must match model training resolution\n+\n+power_map = np.zeros((num_layers, grid_H, grid_W), dtype=np.float32)\n+\n+for cell in placed_cells:\n+    cell_x_m, cell_y_m = cell.x_um * 1e-6, cell.y_um * 1e-6\n+    cell_layer = cell.die_layer            # 0-indexed\n+    cell_power_W = power_report[cell.name]\n+\n+    # map to grid\n+    gi = int(cell_y_m / chip_H_m * grid_H)\n+    gj = int(cell_x_m / chip_W_m * grid_W)\n+    gi, gj = min(gi, grid_H-1), min(gj, grid_W-1)\n+\n+    # power density W/m^2\n+    cell_area_m2 = chip_W_m * chip_H_m / (grid_H * grid_W)\n+    power_map[cell_layer, gi, gj] += cell_power_W / cell_area_m2\n+```\n+\n+**Output:** `power_map.npy` — shape (L, H, W), units W/m²\n+\n+---\n+\n+## Step 5 — Generate Temperature Labels with Thermal Simulator\n+\n+**This step is required to build training data.**\n+Therm-FM needs (power map → steady-state temperature) pairs.\n+\n+**Tools:**\n+- HotSpot (academic, free): 2D and 3D RC thermal models\n+- ANSYS Icepak / Cadence Celsius: commercial, high accuracy\n+- Custom FEM/FDM solver\n+\n+```bash\n+# HotSpot example (2D)\n+hotspot -c hotspot.config -f power_map.ptrace -o temperature.grid\n+\n+# For 3D-IC: use layer stacks, thermal interface materials, boundary conditions\n+```\n+\n+**You need N samples** (different power scenarios) for training:\n+- Vary power patterns: different workloads, utilization levels\n+- Min ~1000 samples; datasets in this repo use N=5000\n+\n+**Output:** `output.mat` — shape (N, L, H, W), temperature in Kelvin\n+\n+---\n+\n+## Step 6 — Create input.mat\n+\n+**Input format:**\n+```\n+input.mat: (N, 4, L, H, W)   ← HDF5 file, key \"data\"\n+  Dim 1 (P=0): power density  [W/m²]\n+  Dim 1 (P=1): x-coordinate   [m or normalized]\n+  Dim 1 (P=2): y-coordinate   [m or normalized]\n+  Dim 1 (P=3): z-position     [m or layer index]\n+```\n+\n+Verified from normalization constants (HS_SC_refine2):\n+- mean[P=0]=18.69 → power density (large physical values)\n+- mean[P=1]=mean[P=2]=0.008 → x,y coordinates (small physical values)\n+- mean[P=3]=0.0 → z-position layer 0\n+\n+```python\n+import h5py\n+import numpy as np\n+\n+N, L, H, W = 5000, 2, 87, 87\n+inputs = np.zeros((N, 4, L, H, W), dtype=np.float32)\n+\n+# x,y coordinate grids (same for all samples and layers)\n+x_grid = np.tile(np.linspace(0, chip_W_m, W), (H, 1)).astype(np.float32)\n+y_grid = np.tile(np.linspace(0, chip_H_m, H), (W, 1)).T.astype(np.float32)\n+z_vals = np.array([layer_heights[l] for l in range(L)], dtype=np.float32)\n+\n+for n in range(N):\n+    for l in range(L):\n+        inputs[n, 0, l] = power_maps[n, l]         # W/m²\n+        inputs[n, 1, l] = x_grid\n+        inputs[n, 2, l] = y_grid\n+        inputs[n, 3, l] = z_vals[l]                # scalar broadcast\n+\n+with h5py.File(\"input.mat\", \"w\") as f:\n+    f.create_dataset(\"data\", data=inputs, compression=\"gzip\")\n+```\n+\n+---\n+\n+## Step 7 — Compute or Reuse Normalization Constants\n+\n+**Option A — Compute from your training data:**\n+```python\n+# Pass no --stats_json to train.py → auto-computed from training split\n+# Then save the computed stats for inference\n+```\n+\n+**Option B — Reuse existing chip constants (if geometry is similar):**\n+```\n+data/thermal_steady/normalization_constants/thermal_steady/\n+├── HS_SC_normalization_constants.json\n+├── HS_QC_normalization_constants.json\n+├── HS_OC_normalization_constants.json\n+├── IND_8C_normalization_constants.json\n+└── IND_32C_normalization_constants.json\n+```\n+\n+JSON structure:\n+```json\n+{\n+  \"input\":  {\"mean\": [L*P values],  \"std\": [L*P values]},\n+  \"output\": {\"mean\": [L values],    \"std\": [L values]}\n+}\n+```\n+\n+---\n+\n+## Step 8 — Fine-tune Therm-FM\n+\n+```bash\n+accelerate launch scOT/train.py \\\n+    --config configs/multichip_exp/baseline_L2_HS_SC_refine1.yaml \\\n+    --data_path data/thermal_steady/YOUR_CHIP \\\n+    --checkpoint_path checkpoints/your_chip \\\n+    --finetune_from checkpoints/pretrained/poseidon-T \\\n+    --replace_embedding_recovery \\\n+    --stats_json data/thermal_steady/normalization_constants/thermal_steady/YOUR_CHIP_normalization_constants.json \\\n+    --wandb_project_name Therm-FM \\\n+    --wandb_run_name your_chip_baseline_T\n+```\n+\n+Key config parameters (from paper):\n+```yaml\n+model_name:   T           # Therm-FM-T (20.7M params)\n+num_epochs:   200\n+batch_size:   40\n+lr:           0.00005\n+lr_scheduler: cosine\n+weight_decay: 0.000001\n+train_ratio:  0.8         # 80% train, 20% test\n+p:            2           # L2/MSE loss (baseline)\n+```\n+\n+---\n+\n+## Step 9 — Run Inference on New Power Scenario\n+\n+```bash\n+python scOT/inference.py \\\n+    --mode save_samples \\\n+    --model_path checkpoints/your_chip \\\n+    --data_path data/thermal_steady/YOUR_CHIP \\\n+    --stats_json data/thermal_steady/normalization_constants/thermal_steady/YOUR_CHIP_normalization_constants.json \\\n+    --output_path predictions/your_chip_temperature.mat\n+```\n+\n+Or use `eval_multichip_v2.py` for paper-exact metrics:\n+```bash\n+python eval_multichip_v2.py \\\n+    --ckpt_dir checkpoints/your_chip \\\n+    --data_dir data/thermal_steady/YOUR_CHIP \\\n+    --norm_dir data/thermal_steady/normalization_constants/thermal_steady \\\n+    --prefix YOUR_CHIP \\\n+    --out results/your_chip_metrics.json\n+```\n+\n+---\n+\n+## Step 10 — Post-process Output\n+\n+```python\n+import h5py\n+import numpy as np\n+import json\n+\n+# Load predictions and denormalize\n+with h5py.File(\"predictions/your_chip_temperature.mat\", \"r\") as f:\n+    pred_norm = f[\"data\"][:]            # (N, L, H, W) — normalized\n+\n+with open(\"YOUR_CHIP_normalization_constants.json\") as f:\n+    stats = json.load(f)[\"output\"]\n+\n+mean = np.array(stats[\"mean\"]).reshape(L, 1, 1)\n+std  = np.array(stats[\"std\"]).reshape(L, 1, 1)\n+temp_K = pred_norm * std + mean         # Kelvin\n+\n+# Hotspot detection\n+temp_C = temp_K - 273.15\n+max_temp = temp_C.max(axis=(2, 3))     # (N, L) — per sample per layer\n+print(f\"Max temperature: {temp_C.max():.1f} °C\")\n+print(f\"Hotspot location: {np.unravel_index(temp_C.argmax(), temp_C.shape)}\")\n+```\n+\n+---\n+\n+## Summary\n+\n+```\n+Verilog + .sdc\n+     ↓  synthesis (Yosys / DC)\n+Gate-level netlist\n+     ↓  place & route (OpenROAD / Innovus)\n+Placed layout (.def) + power map (.rpt)\n+     ↓  power analysis (OpenSTA / PrimeTime-PX)\n+Per-cell power → spatial power grid  [W/m², shape: (L, H, W)]\n+     ↓  thermal simulator (HotSpot / ANSYS)  ← generates training labels\n+(power, temperature) pairs  [N samples]\n+     ↓  format as input.mat / output.mat  [(N,4,L,H,W) / (N,L,H,W)]\n+     ↓  fine-tune Therm-FM  (train.py, 200 epochs)\n+Fine-tuned checkpoint\n+     ↓  inference.py / eval_multichip_v2.py\n+Temperature map  [(N, L, H, W) in Kelvin]\n+```\n+\n+---\n+\n+## Key Constraints\n+\n+| Constraint | Value |\n+|---|---|\n+| Grid resolution | Must match training data (e.g. 87×87 for HS_SC) |\n+| Input key in .mat | `data` |\n+| HDF5 format | MATLAB v7.3 (h5py compatible) |\n+| Coordinate units | Meters (physical) or consistent with training |\n+| Training samples | Minimum ~1000; paper uses 5000 |\n+| Model init | Always start from `poseidon-T` pretrained checkpoint |\n+| Train ratio | 0.8 for HS-type chips, 0.9 for IND-type chips |"
+    }
+  ]
+}

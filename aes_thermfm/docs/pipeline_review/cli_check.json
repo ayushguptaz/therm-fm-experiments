@@ -1,0 +1,20 @@
+{
+  "method": "Executed only actual argparse constructor/add_argument AST statements; no model imports or inference.",
+  "doc_unsupported_flags": [
+    "--stats_json",
+    "--output_path"
+  ],
+  "required_flags": [
+    [
+      "--file"
+    ],
+    [
+      "--data_path"
+    ],
+    [
+      "--ckpt_dir"
+    ]
+  ],
+  "dataset_flag_exists": true,
+  "save_samples_output_format": "np.save inputs.npy, labels.npy, outputs.npy as read in the executed source"
+}

@@ -1,0 +1,343 @@
+{
+  "scope": "New local raster benchmarks and analysis of saved outputs; no new OpenROAD/model/thermal-solver runs.",
+  "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+  "numpy": "2.4.6",
+  "raster_source_sha256": "7eb5bd5e8740166a118df812e4778b2d643452e1db678b24372b923effc30e0b",
+  "timing_caveat": "One measurement per grid, no warm-up; raster only, excludes CSV reads/tensor assembly/HDF5 writes; not GPU timings.",
+  "storage_caveat": "Arithmetic for uncompressed arrays; excludes coordinates deduplication, compression, intermediate activations, optimizer, references and layout files.",
+  "physical_instances": 32004,
+  "positive_power_instances": 14461,
+  "powered_cell_median_width_um": 0.759999999999998,
+  "powered_cell_median_height_um": 1.4000000000000057,
+  "grid_benchmarks": [
+    {
+      "mode": "native_die",
+      "size": 101,
+      "pitch_um": [
+        2.4985,
+        2.506
+      ],
+      "powered_bins": 6181,
+      "raster_seconds": 0.2458675829693675,
+      "total_W": 0.0178553887245414,
+      "conservation_error_W": 0.0,
+      "max_density_W_m3": 75889532766.63326,
+      "largest_bin_power_fraction": 0.005322344546620805,
+      "aes_die_intervals_xy": [
+        100.0,
+        100.0
+      ],
+      "float32_input_plus_output_MiB": 0.38913726806640625,
+      "ten_thousand_float32_pairs_GiB": 3.8001686334609985,
+      "ten_thousand_current_float64_inputs_GiB": 6.080269813537598
+    },
+    {
+      "mode": "native_die",
+      "size": 201,
+      "pitch_um": [
+        1.24925,
+        1.253
+      ],
+      "powered_bins": 21791,
+      "raster_seconds": 0.24512241600314155,
+      "total_W": 0.0178553887245414,
+      "conservation_error_W": 0.0,
+      "max_density_W_m3": 226158684358.48807,
+      "largest_bin_power_fraction": 0.003965284791210274,
+      "aes_die_intervals_xy": [
+        200.0,
+        200.0
+      ],
+      "float32_input_plus_output_MiB": 1.5411758422851562,
+      "ten_thousand_float32_pairs_GiB": 15.050545334815979,
+      "ten_thousand_current_float64_inputs_GiB": 24.080872535705566
+    },
+    {
+      "mode": "native_die",
+      "size": 401,
+      "pitch_um": [
+        0.624625,
+        0.6265
+      ],
+      "powered_bins": 72052,
+      "raster_seconds": 0.24326604104135185,
+      "total_W": 0.0178553887245414,
+      "conservation_error_W": 0.0,
+      "max_density_W_m3": 325020172246.3525,
+      "largest_bin_power_fraction": 0.0014246606862574748,
+      "aes_die_intervals_xy": [
+        400.0,
+        400.0
+      ],
+      "float32_input_plus_output_MiB": 6.134071350097656,
+      "ten_thousand_float32_pairs_GiB": 59.903040528297424,
+      "ten_thousand_current_float64_inputs_GiB": 95.84486484527588
+    },
+    {
+      "mode": "native_die",
+      "size": 1001,
+      "pitch_um": [
+        0.24985,
+        0.2506
+      ],
+      "powered_bins": 368795,
+      "raster_seconds": 0.2671787920407951,
+      "total_W": 0.0178553887245414,
+      "conservation_error_W": 0.0,
+      "max_density_W_m3": 350684362124.033,
+      "largest_bin_power_fraction": 0.0002459447217939308,
+      "aes_die_intervals_xy": [
+        1000.0,
+        1000.0
+      ],
+      "float32_input_plus_output_MiB": 38.223304748535156,
+      "ten_thousand_float32_pairs_GiB": 373.27446043491364,
+      "ten_thousand_current_float64_inputs_GiB": 597.2391366958618
+    },
+    {
+      "mode": "benchmark_1mm_embedding",
+      "size": 101,
+      "pitch_um": [
+        10.0,
+        10.0
+      ],
+      "powered_bins": 442,
+      "raster_seconds": 0.23506329202791676,
+      "total_W": 0.0178553887245414,
+      "conservation_error_W": 0.0,
+      "max_density_W_m3": 7774243667.863771,
+      "largest_bin_power_fraction": 0.008708008308078373,
+      "aes_die_intervals_xy": [
+        24.985,
+        25.06
+      ],
+      "float32_input_plus_output_MiB": 0.38913726806640625,
+      "ten_thousand_float32_pairs_GiB": 3.8001686334609985,
+      "ten_thousand_current_float64_inputs_GiB": 6.080269813537598
+    },
+    {
+      "mode": "benchmark_1mm_embedding",
+      "size": 201,
+      "pitch_um": [
+        5.0,
+        5.0
+      ],
+      "powered_bins": 1682,
+      "raster_seconds": 0.23834816698217764,
+      "total_W": 0.0178553887245414,
+      "conservation_error_W": 0.0,
+      "max_density_W_m3": 18808904684.76314,
+      "largest_bin_power_fraction": 0.005267010697703595,
+      "aes_die_intervals_xy": [
+        49.97,
+        50.12
+      ],
+      "float32_input_plus_output_MiB": 1.5411758422851562,
+      "ten_thousand_float32_pairs_GiB": 15.050545334815979,
+      "ten_thousand_current_float64_inputs_GiB": 24.080872535705566
+    },
+    {
+      "mode": "benchmark_1mm_embedding",
+      "size": 401,
+      "pitch_um": [
+        2.5,
+        2.5
+      ],
+      "powered_bins": 6199,
+      "raster_seconds": 0.23979283397784457,
+      "total_W": 0.0178553887245414,
+      "conservation_error_W": 0.0,
+      "max_density_W_m3": 76019105678.12198,
+      "largest_bin_power_fraction": 0.005321860171380452,
+      "aes_die_intervals_xy": [
+        99.94,
+        100.24
+      ],
+      "float32_input_plus_output_MiB": 6.134071350097656,
+      "ten_thousand_float32_pairs_GiB": 59.903040528297424,
+      "ten_thousand_current_float64_inputs_GiB": 95.84486484527588
+    },
+    {
+      "mode": "benchmark_1mm_embedding",
+      "size": 1001,
+      "pitch_um": [
+        1.0,
+        1.0
+      ],
+      "powered_bins": 31507,
+      "raster_seconds": 0.25790858297841623,
+      "total_W": 0.0178553887245414,
+      "conservation_error_W": 0.0,
+      "max_density_W_m3": 245186880867.91217,
+      "largest_bin_power_fraction": 0.002746362844858306,
+      "aes_die_intervals_xy": [
+        249.85,
+        250.6
+      ],
+      "float32_input_plus_output_MiB": 38.223304748535156,
+      "ten_thousand_float32_pairs_GiB": 373.27446043491364,
+      "ten_thousand_current_float64_inputs_GiB": 597.2391366958618
+    }
+  ],
+  "saved_prediction_response": [
+    {
+      "mode": "native_die",
+      "case_index": 0,
+      "mean_delta_K": 0.013205752810096573,
+      "min_delta_K": -0.08211803917191673,
+      "max_delta_K": 0.17007251266659296,
+      "fraction_delta_below_minus_1mK": 0.0780315655327909,
+      "peak_delta_K": 0.0011236957963660643,
+      "rms_delta_K": 0.02015717047131548
+    },
+    {
+      "mode": "native_die",
+      "case_index": 1,
+      "mean_delta_K": 0.027452378401426066,
+      "min_delta_K": -0.07095535865363445,
+      "max_delta_K": 0.18800492880455977,
+      "fraction_delta_below_minus_1mK": 0.052396823840799925,
+      "peak_delta_K": 0.0009191556676455548,
+      "rms_delta_K": 0.03677726682330825
+    },
+    {
+      "mode": "native_die",
+      "case_index": 2,
+      "mean_delta_K": 0.04532395108657351,
+      "min_delta_K": -0.07087494685237061,
+      "max_delta_K": 0.2107095023024499,
+      "fraction_delta_below_minus_1mK": 0.05680815606313107,
+      "peak_delta_K": 0.000858292507416536,
+      "rms_delta_K": 0.05941246794913917
+    },
+    {
+      "mode": "benchmark_1mm_embedding",
+      "case_index": 4,
+      "mean_delta_K": 0.0007404112061582571,
+      "min_delta_K": -0.008174879527587109,
+      "max_delta_K": 0.026351283613735177,
+      "fraction_delta_below_minus_1mK": 0.012106656210175473,
+      "peak_delta_K": -0.0003826951350447416,
+      "rms_delta_K": 0.002181716088349453
+    },
+    {
+      "mode": "benchmark_1mm_embedding",
+      "case_index": 5,
+      "mean_delta_K": 0.0014335950654608342,
+      "min_delta_K": -0.008575682099490223,
+      "max_delta_K": 0.03879848462543123,
+      "fraction_delta_below_minus_1mK": 0.05372022350749926,
+      "peak_delta_K": -0.0006807657181866489,
+      "rms_delta_K": 0.0040724741141342485
+    },
+    {
+      "mode": "benchmark_1mm_embedding",
+      "case_index": 6,
+      "mean_delta_K": 0.0023029045849890933,
+      "min_delta_K": -0.009590954998373036,
+      "max_delta_K": 0.054434167957424506,
+      "fraction_delta_below_minus_1mK": 0.1338104107440447,
+      "peak_delta_K": -0.0007327968837103072,
+      "rms_delta_K": 0.006523046869100746
+    }
+  ],
+  "baseline_101_maps_match_saved_artifacts": true,
+  "reported_flow_stages": [
+    {
+      "log": "5_2_route.log",
+      "elapsed_seconds": 232.24,
+      "peak_memory_MiB": 1123.8125
+    },
+    {
+      "log": "1_2_yosys.log",
+      "elapsed_seconds": 38.78,
+      "peak_memory_MiB": 71.51171875
+    },
+    {
+      "log": "6_report.log",
+      "elapsed_seconds": 22.19,
+      "peak_memory_MiB": 420.21875
+    },
+    {
+      "log": "5_1_grt.log",
+      "elapsed_seconds": 20.01,
+      "peak_memory_MiB": 436.125
+    },
+    {
+      "log": "3_3_place_gp.log",
+      "elapsed_seconds": 16.74,
+      "peak_memory_MiB": 414.6015625
+    },
+    {
+      "log": "2_1_floorplan.log",
+      "elapsed_seconds": 15.33,
+      "peak_memory_MiB": 172.9453125
+    },
+    {
+      "log": "4_1_cts.log",
+      "elapsed_seconds": 8.23,
+      "peak_memory_MiB": 223.83203125
+    },
+    {
+      "log": "3_5_place_dp.log",
+      "elapsed_seconds": 8.22,
+      "peak_memory_MiB": 196.25
+    },
+    {
+      "log": "3_4_place_resized.log",
+      "elapsed_seconds": 4.83,
+      "peak_memory_MiB": 202.859375
+    },
+    {
+      "log": "6_1_merge.log",
+      "elapsed_seconds": 2.49,
+      "peak_memory_MiB": 488.35546875
+    },
+    {
+      "log": "5_3_fillcell.log",
+      "elapsed_seconds": 0.55,
+      "peak_memory_MiB": 159.25
+    },
+    {
+      "log": "1_synth.log",
+      "elapsed_seconds": 0.5,
+      "peak_memory_MiB": 121.375
+    },
+    {
+      "log": "2_4_floorplan_pdn.log",
+      "elapsed_seconds": 0.43,
+      "peak_memory_MiB": 112.25
+    },
+    {
+      "log": "6_1_fill.log",
+      "elapsed_seconds": 0.41,
+      "peak_memory_MiB": 132.375
+    },
+    {
+      "log": "2_2_floorplan_macro.log",
+      "elapsed_seconds": 0.35,
+      "peak_memory_MiB": 107.5
+    },
+    {
+      "log": "2_3_floorplan_tapcell.log",
+      "elapsed_seconds": 0.34,
+      "peak_memory_MiB": 106.5
+    },
+    {
+      "log": "3_1_place_gp_skip_io.log",
+      "elapsed_seconds": 0.34,
+      "peak_memory_MiB": 106.875
+    },
+    {
+      "log": "1_1_yosys_canonicalize.log",
+      "elapsed_seconds": 0.14,
+      "peak_memory_MiB": 45.875
+    },
+    {
+      "log": "3_2_place_iop.log",
+      "elapsed_seconds": 0.13,
+      "peak_memory_MiB": 77.375
+    }
+  ],
+  "sum_reported_elapsed_seconds": 372.25
+}

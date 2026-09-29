@@ -1,0 +1,106 @@
+diff --git a/scOT/model.py b/scOT/model.py
+index ff6c692..799c8a0 100644
+--- a/scOT/model.py
++++ b/scOT/model.py
+@@ -111,6 +111,8 @@ class ScOTConfig(PretrainedConfig):
+         pinn_pde_weight: float = 0.05,
+         pinn_top_weight: float = 0.05,
+         pinn_htc_weight: float = 0.05,  # Suggested values: supervised loss 1.0, auxiliary losses 0.1.
++        grad_weight_alpha: float = 1.0,
++        interface_lambda: float = 0.05,
+         **kwargs,
+     ):
+         super().__init__(**kwargs)
+@@ -150,6 +152,8 @@ class ScOTConfig(PretrainedConfig):
+         self.pinn_pde_weight = pinn_pde_weight
+         self.pinn_top_weight = pinn_top_weight
+         self.pinn_htc_weight = pinn_htc_weight
++        self.grad_weight_alpha = grad_weight_alpha
++        self.interface_lambda = interface_lambda
+ 
+ 
+ class LayerNorm(nn.LayerNorm):
+@@ -1796,8 +1800,46 @@ class ScOT(Swinv2PreTrainedModel):
+                     + self.config.pinn_top_weight * physics_dict["top_loss"]
+                     + self.config.pinn_htc_weight * physics_dict["htc_loss"]
+                 )
++            elif self.config.p == 5:
++                if labels is None:
++                    raise ValueError("Labels are required for gradient-weighted loss (p=5).")
++                dT_dx = labels[:, :, :, 1:] - labels[:, :, :, :-1]
++                dT_dx = F.pad(dT_dx, (0, 1, 0, 0), mode='replicate')
++                dT_dy = labels[:, :, 1:, :] - labels[:, :, :-1, :]
++                dT_dy = F.pad(dT_dy, (0, 0, 0, 1), mode='replicate')
++                grad_mag = torch.sqrt(dT_dx ** 2 + dT_dy ** 2 + 1e-8)
++                weights = 1.0 + self.config.grad_weight_alpha * grad_mag
++                weights = weights / weights.mean()
++                loss = (weights * (prediction - labels).abs()).mean()
++            elif self.config.p == 6:
++                if labels is None:
++                    raise ValueError("Labels are required for combined loss (p=6).")
++                # Gradient-weighted base loss
++                dT_dx = labels[:, :, :, 1:] - labels[:, :, :, :-1]
++                dT_dx = F.pad(dT_dx, (0, 1, 0, 0), mode='replicate')
++                dT_dy = labels[:, :, 1:, :] - labels[:, :, :-1, :]
++                dT_dy = F.pad(dT_dy, (0, 0, 0, 1), mode='replicate')
++                grad_mag = torch.sqrt(dT_dx ** 2 + dT_dy ** 2 + 1e-8)
++                weights = 1.0 + self.config.grad_weight_alpha * grad_mag
++                weights = weights / weights.mean()
++                base_loss = (weights * (prediction - labels).abs()).mean()
++                # Interface penalty: extra MAE on top-2% high-gradient (boundary) pixels
++                interface_mask = (grad_mag > grad_mag.mean() + 2 * grad_mag.std()).float()
++                interface_loss = (interface_mask * (prediction - labels).abs()).mean()
++                loss = base_loss + self.config.interface_lambda * interface_loss
++            elif self.config.p == 7:
++                if labels is None:
++                    raise ValueError("Labels are required for gradient-weighted L2 loss (p=7).")
++                dT_dx = labels[:, :, :, 1:] - labels[:, :, :, :-1]
++                dT_dx = F.pad(dT_dx, (0, 1, 0, 0), mode="replicate")
++                dT_dy = labels[:, :, 1:, :] - labels[:, :, :-1, :]
++                dT_dy = F.pad(dT_dy, (0, 0, 0, 1), mode="replicate")
++                grad_mag = torch.sqrt(dT_dx ** 2 + dT_dy ** 2 + 1e-8)
++                weights = 1.0 + self.config.grad_weight_alpha * grad_mag
++                weights = weights / weights.mean()
++                loss = (weights * (prediction - labels) ** 2).mean()
+             else:
+-                raise ValueError("p must be 1, 2, 3, or 4")
++                raise ValueError("p must be 1, 2, 3, 4, 5, 6, or 7")
+ 
+         if not return_dict:
+             output = (prediction,) + decoder_output[1:] + encoder_outputs[1:]
+diff --git a/scOT/train.py b/scOT/train.py
+index a36f08c..4b8e1bd 100644
+--- a/scOT/train.py
++++ b/scOT/train.py
+@@ -555,7 +555,9 @@ if __name__ == "__main__":
+             use_absolute_embeddings=False,
+             initializer_range=0.02,
+             layer_norm_eps=1e-5,
+-            p=2,  # Choose the calculation method for the loss function , 1 for l1, 2 for l2 ,3 for hotspot loss ,4 for pinn loss
++            p=config.get("p", 1),
++            grad_weight_alpha=config.get("grad_weight_alpha", 1.0),
++            interface_lambda=config.get("interface_lambda", 0.05),
+             channel_slice_list_normalized_loss=channel_slice_list,
+             residual_model="convnext",
+             use_conditioning=time_involved,
+@@ -622,6 +624,20 @@ if __name__ == "__main__":
+         model = ScOT.from_pretrained(
+             params.finetune_from, config=model_config, ignore_mismatched_sizes=True
+         )
++        # Fix any NaN params left by ignore_mismatched_sizes (shape-mismatched weights aren't initialized)
++        import torch.nn as nn_init
++        for name, param in model.named_parameters():
++            if torch.isnan(param).any() or torch.isinf(param).any():
++                if 'weight' in name and param.dim() >= 2:
++                    nn_init.init.xavier_normal_(param.data)
++                else:
++                    nn_init.init.zeros_(param.data)
++        # Warm-start without --replace_embedding_recovery uses config=None,
++        # so checkpoint config loads unchanged. Patch loss params from yaml.
++        if model_config is None:
++            for attr, key in [("p","p"),("grad_weight_alpha","grad_weight_alpha"),("interface_lambda","interface_lambda")]:
++                if key in config:
++                    setattr(model.config, attr, config[key])
+     else:
+         model = ScOT(model_config)
+     num_params = get_num_parameters(model)

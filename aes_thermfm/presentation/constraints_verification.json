@@ -1,0 +1,33 @@
+{
+  "clock_period_ns": 0.82,
+  "clock_frequency_GHz": 1.2195121951219512,
+  "input_delay_ns": 0.164,
+  "output_delay_ns": 0.164,
+  "nonclock_input_bits": 258,
+  "output_bits": 129,
+  "exact_port_set_coverage": true,
+  "initial_final_die_match": true,
+  "die_um": [
+    0.0,
+    0.0,
+    249.85,
+    250.6
+  ],
+  "model_contract": [
+    101,
+    8,
+    2
+  ],
+  "setup_worst_slack_ns": -0.0380276,
+  "setup_violations": 19,
+  "hold_worst_slack_ns": 0.10568,
+  "hold_violations": 0,
+  "fresh_opensta_check_setup": "completed without check_setup diagnostics; hierarchical-flow warning present",
+  "missing_explicit_final_sdc_commands": [
+    "set_clock_uncertainty",
+    "set_driving_cell",
+    "set_input_transition",
+    "set_load"
+  ],
+  "scope": "Checks saved design and selected model. Does not certify constraints against an external system spec or validate physical AES temperatures."
+}

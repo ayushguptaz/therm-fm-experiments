@@ -1,0 +1,110 @@
+[
+  {
+    "index": 0,
+    "domain": "native_die",
+    "original_index": 1,
+    "second_layer_case": "zero",
+    "second_layer_scale": 0.0,
+    "second_layer_power_mW": 0.0,
+    "aes_power_mW": 17.8553887245414
+  },
+  {
+    "index": 1,
+    "domain": "native_die",
+    "original_index": 1,
+    "second_layer_case": "half",
+    "second_layer_scale": 0.5,
+    "second_layer_power_mW": 8.9276943622707,
+    "aes_power_mW": 17.8553887245414
+  },
+  {
+    "index": 2,
+    "domain": "native_die",
+    "original_index": 1,
+    "second_layer_case": "equal",
+    "second_layer_scale": 1.0,
+    "second_layer_power_mW": 17.8553887245414,
+    "aes_power_mW": 17.8553887245414
+  },
+  {
+    "index": 3,
+    "domain": "native_die",
+    "original_index": 1,
+    "second_layer_case": "double",
+    "second_layer_scale": 2.0,
+    "second_layer_power_mW": 35.7107774490828,
+    "aes_power_mW": 17.8553887245414
+  },
+  {
+    "index": 4,
+    "domain": "native_die",
+    "original_index": 1,
+    "second_layer_case": "equal_flipped",
+    "second_layer_scale": 1.0,
+    "second_layer_power_mW": 17.8553887245414,
+    "aes_power_mW": 17.8553887245414
+  },
+  {
+    "index": 5,
+    "domain": "native_die",
+    "original_index": 1,
+    "second_layer_case": "zero_repeat",
+    "second_layer_scale": 0.0,
+    "second_layer_power_mW": 0.0,
+    "aes_power_mW": 17.8553887245414
+  },
+  {
+    "index": 6,
+    "domain": "benchmark_1mm_embedding",
+    "original_index": 5,
+    "second_layer_case": "zero",
+    "second_layer_scale": 0.0,
+    "second_layer_power_mW": 0.0,
+    "aes_power_mW": 17.8553887245414
+  },
+  {
+    "index": 7,
+    "domain": "benchmark_1mm_embedding",
+    "original_index": 5,
+    "second_layer_case": "half",
+    "second_layer_scale": 0.5,
+    "second_layer_power_mW": 8.9276943622707,
+    "aes_power_mW": 17.8553887245414
+  },
+  {
+    "index": 8,
+    "domain": "benchmark_1mm_embedding",
+    "original_index": 5,
+    "second_layer_case": "equal",
+    "second_layer_scale": 1.0,
+    "second_layer_power_mW": 17.8553887245414,
+    "aes_power_mW": 17.8553887245414
+  },
+  {
+    "index": 9,
+    "domain": "benchmark_1mm_embedding",
+    "original_index": 5,
+    "second_layer_case": "double",
+    "second_layer_scale": 2.0,
+    "second_layer_power_mW": 35.7107774490828,
+    "aes_power_mW": 17.8553887245414
+  },
+  {
+    "index": 10,
+    "domain": "benchmark_1mm_embedding",
+    "original_index": 5,
+    "second_layer_case": "equal_flipped",
+    "second_layer_scale": 1.0,
+    "second_layer_power_mW": 17.8553887245414,
+    "aes_power_mW": 17.8553887245414
+  },
+  {
+    "index": 11,
+    "domain": "benchmark_1mm_embedding",
+    "original_index": 5,
+    "second_layer_case": "zero_repeat",
+    "second_layer_scale": 0.0,
+    "second_layer_power_mW": 0.0,
+    "aes_power_mW": 17.8553887245414
+  }
+]

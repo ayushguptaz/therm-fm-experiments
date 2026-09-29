@@ -1,0 +1,81 @@
+latest: Pulling from openroad/orfs
+20c3783cc497: Pulling fs layer
+244c9762fb60: Pulling fs layer
+c3d0d9830c5f: Pulling fs layer
+71877c7ff81e: Pulling fs layer
+73a1cce937f6: Pulling fs layer
+f13fa7c0e2b4: Pulling fs layer
+37fd421be745: Pulling fs layer
+375fdc1e34f3: Pulling fs layer
+d88685b59c22: Pulling fs layer
+8834a8549fd2: Pulling fs layer
+1c0e015126c6: Pulling fs layer
+c3618b59fc4a: Pulling fs layer
+e3b10a622617: Pulling fs layer
+44913780398d: Pulling fs layer
+d39c034a761f: Pulling fs layer
+1289a9a5d567: Pulling fs layer
+99c11cd6b6ba: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+d3ac3db6e4de: Pulling fs layer
+2716d8ae3603: Pulling fs layer
+f494fd8c0e6a: Pulling fs layer
+c2e67727c296: Pulling fs layer
+a7f2a94da116: Pulling fs layer
+e1e516c20f7a: Pulling fs layer
+fa446728b3cf: Pulling fs layer
+4f4fb700ef54: Already exists
+44136fa355b3: Download complete
+73a1cce937f6: Download complete
+244c9762fb60: Download complete
+37fd421be745: Download complete
+c3618b59fc4a: Download complete
+98034ebd84e3: Download complete
+c3d0d9830c5f: Download complete
+d88685b59c22: Download complete
+71877c7ff81e: Download complete
+a7f2a94da116: Download complete
+c2e67727c296: Download complete
+f494fd8c0e6a: Download complete
+d39c034a761f: Download complete
+1289a9a5d567: Download complete
+375fdc1e34f3: Download complete
+1c0e015126c6: Download complete
+f13fa7c0e2b4: Download complete
+e3b10a622617: Download complete
+99c11cd6b6ba: Download complete
+2716d8ae3603: Download complete
+44913780398d: Download complete
+20c3783cc497: Download complete
+c3d0d9830c5f: Pull complete
+375fdc1e34f3: Pull complete
+20c3783cc497: Pull complete
+244c9762fb60: Pull complete
+c3618b59fc4a: Pull complete
+d88685b59c22: Pull complete
+f494fd8c0e6a: Pull complete
+1c0e015126c6: Pull complete
+e1e516c20f7a: Download complete
+fa446728b3cf: Download complete
+d3ac3db6e4de: Download complete
+8834a8549fd2: Download complete
+8834a8549fd2: Pull complete
+4f4fb700ef54: Pull complete
+73a1cce937f6: Pull complete
+71877c7ff81e: Pull complete
+c2e67727c296: Pull complete
+1289a9a5d567: Pull complete
+e3b10a622617: Pull complete
+99c11cd6b6ba: Pull complete
+d39c034a761f: Pull complete
+44913780398d: Pull complete
+f13fa7c0e2b4: Pull complete
+d3ac3db6e4de: Pull complete
+2716d8ae3603: Pull complete
+a7f2a94da116: Pull complete
+e1e516c20f7a: Pull complete
+37fd421be745: Pull complete
+fa446728b3cf: Pull complete
+Digest: sha256:94d3c1c19b47e8ef2c3a9b32cb9dc6e5c18817ffb71f03e28ec67d6fa0a44512
+Status: Downloaded newer image for openroad/orfs:latest
+docker.io/openroad/orfs:latest

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "original_manifest_entries_checked": 240,
+  "expected_changed_original_files": [
+    "README.md",
+    "WORK_LOG.md"
+  ],
+  "original_other_files_unchanged": true,
+  "grid_cases": 8,
+  "power_conservation_passed": true,
+  "baseline_maps_match": true,
+  "audit_script_syntax_valid": true
+}

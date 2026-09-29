@@ -1,0 +1,99 @@
+{
+  "device": "cuda",
+  "torch_version": "2.4.0+cu121",
+  "checkpoint": "/home/ubuntu/Therm-FM/checkpoints/multichip_exp/gwl2_a05_IND_8C/ThermFM-multichip/gwl2_a05_IND_8C",
+  "weights_sha256": "633794c27ec3379cb534d38b1569aec296a7fb51127eabeb69b4bd40c6e632d9",
+  "stats_sha256": "2c156e1584ccb39a76f86859b2231f5755ef12265e42043388281bc93fdb4caf",
+  "input_sha256": "0c7e38f9558a37b5fd400a79cf5bcc5e2e36fa7d860e5bbcb93159e6445e8e30",
+  "input_shape": [
+    1,
+    4,
+    2,
+    101,
+    101
+  ],
+  "output_shape": [
+    1,
+    2,
+    101,
+    101
+  ],
+  "loading_info": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "error_msgs": []
+  },
+  "model_load_seconds": 0.6941939539974555,
+  "forward_seconds_per_sample": [
+    0.0299356329778675
+  ],
+  "gpu_peak_allocated_bytes": 111186944,
+  "normalized_input_channel_ranges": [
+    {
+      "min": -0.9715873003005981,
+      "max": 1.4005578756332397
+    },
+    {
+      "min": -1.7149858474731445,
+      "max": 1.7149858474731445
+    },
+    {
+      "min": -1.7149858474731445,
+      "max": 1.7149858474731445
+    },
+    {
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "min": -0.6082233786582947,
+      "max": 1.7275536060333252
+    },
+    {
+      "min": -1.7149858474731445,
+      "max": 1.7149858474731445
+    },
+    {
+      "min": -1.7149858474731445,
+      "max": 1.7149858474731445
+    },
+    {
+      "min": 0.0,
+      "max": 0.0
+    }
+  ],
+  "samples": [
+    {
+      "min_K": 351.6910318321256,
+      "max_K": 358.23500375270083,
+      "mean_K": 355.0000145850801,
+      "layers": [
+        {
+          "min_K": 351.6910318321256,
+          "max_K": 356.7297770800359,
+          "mean_K": 354.1170986067365,
+          "argmax_yx": [
+            1,
+            98
+          ]
+        },
+        {
+          "min_K": 354.22240579478614,
+          "max_K": 358.23500375270083,
+          "mean_K": 355.88293056342366,
+          "argmax_yx": [
+            99,
+            98
+          ]
+        }
+      ]
+    }
+  ],
+  "reference_metrics": {
+    "MAE_K": 0.02267097718561236,
+    "RMSE_K": 0.0312524348739882,
+    "global_max_error_K": 0.39338636439589436,
+    "purpose": "held-out source-benchmark plumbing check, not AES validation"
+  }
+}

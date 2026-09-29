@@ -1,0 +1,10 @@
+Read-only check on 2026-09-29, ubuntu@100.54.108.10.
+Commands: df -h /; nvidia-smi --query-gpu=name,memory.used,memory.total --format=csv,noheader
+
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       146G  138G  7.4G  95% /
+NVIDIA L40S, 1901 MiB, 46068 MiB
+
+Snapshot only. GPU memory here includes other processes/context and is not the
+Therm-FM inference benchmark's peak allocation. No processes were stopped and
+no existing data was removed.

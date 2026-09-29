@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "weights_hash_matches_executed_run": true,
+    "stats_hash_matches_executed_run": true,
+    "input_hash_matches_executed_run": true,
+    "archived_source_and_weights_replay_bitwise_equal": true,
+    "all_shapes_and_finite_checks_passed": true,
+    "npy_and_hdf5_predictions_equal": true,
+    "serialized_tensor_power_conservation_passed": true,
+    "final_physical_design_files_present": true,
+    "real_source_sanity_pair_archived": true
+  },
+  "count": 9,
+  "status": "PASS",
+  "scope": "file/data/inference integrity; not AES thermal accuracy, timing closure, or foundry sign-off"
+}

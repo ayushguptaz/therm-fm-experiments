@@ -1,0 +1,308 @@
+{
+  "sha": "6def77bf34dc98952b1b7b4e91a3a1bee17d50de",
+  "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/trees/6def77bf34dc98952b1b7b4e91a3a1bee17d50de",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e7b5d836abd72f999562e2b0b06429cfea6822b",
+      "size": 69,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/4e7b5d836abd72f999562e2b0b06429cfea6822b"
+    },
+    {
+      "path": "DATASET.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a1edaec40408a788bd637a54f99fec832d2e2a7",
+      "size": 2997,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/7a1edaec40408a788bd637a54f99fec832d2e2a7"
+    },
+    {
+      "path": "EXPERIMENTS_SUMMARY.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4874d6a0692f55e9f262cb034460fd500b160e5",
+      "size": 10715,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/b4874d6a0692f55e9f262cb034460fd500b160e5"
+    },
+    {
+      "path": "EXPERIMENT_REPORT.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c41a78c9056d84bb067b1d5a52997b0bc2f5faa7",
+      "size": 10968,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/c41a78c9056d84bb067b1d5a52997b0bc2f5faa7"
+    },
+    {
+      "path": "EXPERIMENT_REPORT_B_p5.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "079c746d6d72985d0783e36fd75517e59da6e1d4",
+      "size": 4892,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/079c746d6d72985d0783e36fd75517e59da6e1d4"
+    },
+    {
+      "path": "EXPERIMENT_REPORT_B_p6.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7972ff30f5defc26347433c9c4518361993f467c",
+      "size": 6726,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/7972ff30f5defc26347433c9c4518361993f467c"
+    },
+    {
+      "path": "METRIC_FORMULAS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "016b305720bf7db0a1930af64d33a14886acda39",
+      "size": 3959,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/016b305720bf7db0a1930af64d33a14886acda39"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "383c47dcf075f128903f8c11bbead3039b61aef9",
+      "size": 4595,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/383c47dcf075f128903f8c11bbead3039b61aef9"
+    },
+    {
+      "path": "RESOLUTION_INCREMENT_PLAN.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c693c043f6d5b33fe96e11f165496528f2a0bd40",
+      "size": 4699,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/c693c043f6d5b33fe96e11f165496528f2a0bd40"
+    },
+    {
+      "path": "THERM_FM_PIPELINE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60a14eb655f3b44c0b5177fe5f64ce5c98b7a706",
+      "size": 9230,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/60a14eb655f3b44c0b5177fe5f64ce5c98b7a706"
+    },
+    {
+      "path": "configs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ea0547ce282de1cbc4074bf039946c44de38afda",
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/trees/ea0547ce282de1cbc4074bf039946c44de38afda"
+    },
+    {
+      "path": "configs/run_exp_baseline_B.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb5bbd2f44163aa508b548b00d457335aa52154b",
+      "size": 447,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/fb5bbd2f44163aa508b548b00d457335aa52154b"
+    },
+    {
+      "path": "configs/run_exp_combined_B.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba7204fa4c9bfd1af5ada10f0c068c607721acbc",
+      "size": 512,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/ba7204fa4c9bfd1af5ada10f0c068c607721acbc"
+    },
+    {
+      "path": "configs/run_exp_combined_T.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6efc3db43b9839b5cc61c0e28223585d2287356e",
+      "size": 512,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/6efc3db43b9839b5cc61c0e28223585d2287356e"
+    },
+    {
+      "path": "configs/run_exp_gradweight_B.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f59b12680d25b114bfb8129fc77839caac86ecc",
+      "size": 479,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/9f59b12680d25b114bfb8129fc77839caac86ecc"
+    },
+    {
+      "path": "configs/run_exp_gradweight_T.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f976ec55467c87094e4f318ff97f0951e5740139",
+      "size": 479,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/f976ec55467c87094e4f318ff97f0951e5740139"
+    },
+    {
+      "path": "patches",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7baca158512a2e011dbdab7308d49c9b6768ec92",
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/trees/7baca158512a2e011dbdab7308d49c9b6768ec92"
+    },
+    {
+      "path": "patches/model_loss_extensions.patch",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c742a0e55f77ee24eb4bf44aebb9e70f7b58697",
+      "size": 3144,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/7c742a0e55f77ee24eb4bf44aebb9e70f7b58697"
+    },
+    {
+      "path": "patches/train_nan_fix.patch",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7012f9425b7d131ec4045c5a5948b793dd621334",
+      "size": 1716,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/7012f9425b7d131ec4045c5a5948b793dd621334"
+    },
+    {
+      "path": "results",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "709b0ab7daf0851812573faadeafa297a368fcf9",
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/trees/709b0ab7daf0851812573faadeafa297a368fcf9"
+    },
+    {
+      "path": "results/baseline_metrics.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8064042819af31545c40b3e7ecfee9caa734e818",
+      "size": 405,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/8064042819af31545c40b3e7ecfee9caa734e818"
+    },
+    {
+      "path": "results/baseline_metrics_B.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd3bfba761c5849fb55b103be45c61d24d2d18d",
+      "size": 554,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/ddd3bfba761c5849fb55b103be45c61d24d2d18d"
+    },
+    {
+      "path": "results/combined_metrics.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8328a4fbe871ad95a9d273ff4ba4f20973592759",
+      "size": 809,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/8328a4fbe871ad95a9d273ff4ba4f20973592759"
+    },
+    {
+      "path": "results/combined_metrics_001.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98478ba53d2574ae1b81bf3bb8385685ebedee68",
+      "size": 1143,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/98478ba53d2574ae1b81bf3bb8385685ebedee68"
+    },
+    {
+      "path": "results/combined_metrics_B.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22e6a2edf4f7d8692ab3ffc71e2b3572a14277c2",
+      "size": 1082,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/22e6a2edf4f7d8692ab3ffc71e2b3572a14277c2"
+    },
+    {
+      "path": "results/full_comparison.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16e9b34aecd7c69ad919538893e779793fb4dfc0",
+      "size": 10291,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/16e9b34aecd7c69ad919538893e779793fb4dfc0"
+    },
+    {
+      "path": "results/gradweight_metrics.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5a1301c059884053bbb4958afe71100739d4815",
+      "size": 580,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/e5a1301c059884053bbb4958afe71100739d4815"
+    },
+    {
+      "path": "results/gradweight_metrics_B.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b8f8734a00b3a032738c97a2093811aade856d7",
+      "size": 877,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/6b8f8734a00b3a032738c97a2093811aade856d7"
+    },
+    {
+      "path": "results/multichip_baseline_L2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e08988d7ab7df6ccae9f9a2394ef61dd34a7bca8",
+      "size": 1227,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/e08988d7ab7df6ccae9f9a2394ef61dd34a7bca8"
+    },
+    {
+      "path": "results/multichip_baseline_L2_refine2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a67750358541c611a9b43d2e459a513dca8a85b",
+      "size": 1168,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/8a67750358541c611a9b43d2e459a513dca8a85b"
+    },
+    {
+      "path": "results/multichip_baseline_L2_v2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d506637ca5292ca9e77e0ea16e820b7c4866039",
+      "size": 1133,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/6d506637ca5292ca9e77e0ea16e820b7c4866039"
+    },
+    {
+      "path": "results/multichip_gwl2_alpha01.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a78d16ba0938bf41d81ef9f21c93673af128ade2",
+      "size": 1335,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/a78d16ba0938bf41d81ef9f21c93673af128ade2"
+    },
+    {
+      "path": "results/multichip_gwl2_alpha05.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d57b68a9d003a919f15dbfa7f5c5c93117d0cfb",
+      "size": 1383,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/2d57b68a9d003a919f15dbfa7f5c5c93117d0cfb"
+    },
+    {
+      "path": "results/multichip_gwl2_alpha05_refine2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20209a58b8f5399f4eda66deffc283a28afdb45c",
+      "size": 1286,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/20209a58b8f5399f4eda66deffc283a28afdb45c"
+    },
+    {
+      "path": "results/multichip_gwl2_alpha05_v2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66fec67afd9c41ec5502834935f60d1e607aefd7",
+      "size": 1251,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/66fec67afd9c41ec5502834935f60d1e607aefd7"
+    },
+    {
+      "path": "results/refine1_comparison.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a32b5ac1f750c9f4d64593e2200b33e9cc0d227",
+      "size": 4561,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/7a32b5ac1f750c9f4d64593e2200b33e9cc0d227"
+    },
+    {
+      "path": "results/refine1_comparison_v2.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef6c56eb75e22f16ac2d909bb8c1f0cd41db73b7",
+      "size": 4185,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/ef6c56eb75e22f16ac2d909bb8c1f0cd41db73b7"
+    },
+    {
+      "path": "results/refine1_vs_paper_report.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ecb65fe26ef31ddf24cf9b2d7fe7d071ae1c7bca",
+      "size": 4157,
+      "url": "https://api.github.com/repos/ayushguptaz/therm-fm-experiments/git/blobs/ecb65fe26ef31ddf24cf9b2d7fe7d071ae1c7bca"
+    }
+  ],
+  "truncated": false
+}

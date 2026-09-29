@@ -88,3 +88,9 @@ accelerate launch scOT/train.py \
 ## Paper Reference
 
 Xin et al., "Therm-FM: Foundation Model is ALL YOU NEED for 3D-ICs Thermal Simulation", DAC 2026. arXiv:2605.22663
+
+## AES physical-design-to-temperature pipeline
+
+The [AES experiment](aes_thermfm/README.md) archives the executed OpenROAD/OpenSTA-to-Therm-FM flow, starting inputs, final routed design, power maps, temperature predictions, bottleneck analysis and [presentation](aes_thermfm/presentation/output/AES_ThermFM_Pipeline_Verified.pptx). Predictions are exploratory and are not physically validated AES temperatures.
+
+Read the [review and corrections](aes_thermfm/docs/PIPELINE_DOCUMENT_REVIEW.md) alongside the earlier `THERM_FM_PIPELINE.md` guide. [Checkpoint restoration](aes_thermfm/docs/GIT_ARCHIVE.md) is required to rerun inference; model weights are not stored in Git.

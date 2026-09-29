@@ -1,0 +1,9 @@
+# Direct dependencies for this experiment's inference/conversion/plot scripts.
+# Executed with Python 3.10. Torch's CUDA build was 2.4.0+cu121.
+# Install the appropriate PyTorch 2.4.0 build for the target machine separately.
+torch==2.4.0
+transformers==4.29.2
+numpy==2.2.6
+h5py==3.16.0
+matplotlib==3.10.9
+safetensors==0.8.0

@@ -1,0 +1,88 @@
+{
+  "cases": [
+    {
+      "case": "native_die_activity_0.02",
+      "power_mW": 8.865363052713349,
+      "min_K": 350.6284135390258,
+      "max_K": 355.50175936363746,
+      "mean_K": 353.25263149962586,
+      "mean_delta_from_zero_K": 0.013205752810096573,
+      "max_abs_delta_from_zero_K": 0.17007251266659296,
+      "fraction_cooler_than_zero": 0.0971963532986962
+    },
+    {
+      "case": "native_die_activity_0.10",
+      "power_mW": 17.8553887245414,
+      "min_K": 350.6698787260675,
+      "max_K": 355.50155482350874,
+      "mean_K": 353.2668781252172,
+      "mean_delta_from_zero_K": 0.027452378401426066,
+      "max_abs_delta_from_zero_K": 0.18800492880455977,
+      "fraction_cooler_than_zero": 0.06587589452014508
+    },
+    {
+      "case": "native_die_activity_0.20",
+      "power_mW": 29.092920914649767,
+      "min_K": 350.71966255782195,
+      "max_K": 355.5014939603485,
+      "mean_K": 353.2847496979023,
+      "mean_delta_from_zero_K": 0.045323951086573507,
+      "max_abs_delta_from_zero_K": 0.2107095023024499,
+      "fraction_cooler_than_zero": 0.06788550142142927
+    },
+    {
+      "case": "native_die_activity_zero_source",
+      "power_mW": 0,
+      "min_K": 350.6088186680951,
+      "max_K": 355.5006356678411,
+      "mean_K": 353.23942574681575,
+      "mean_delta_from_zero_K": 0.0,
+      "max_abs_delta_from_zero_K": 0.0,
+      "fraction_cooler_than_zero": 0.0
+    },
+    {
+      "case": "benchmark_1mm_embedding_activity_0.02",
+      "power_mW": 8.865363052713349,
+      "min_K": 351.7655279557045,
+      "max_K": 354.95676095282727,
+      "mean_K": 353.5140120735158,
+      "mean_delta_from_zero_K": 0.0007404112061582571,
+      "max_abs_delta_from_zero_K": 0.026351283613735177,
+      "fraction_cooler_than_zero": 0.29737280658758947
+    },
+    {
+      "case": "benchmark_1mm_embedding_activity_0.10",
+      "power_mW": 17.8553887245414,
+      "min_K": 351.76536682236303,
+      "max_K": 354.9564628822441,
+      "mean_K": 353.5147052573751,
+      "mean_delta_from_zero_K": 0.0014335950654608342,
+      "max_abs_delta_from_zero_K": 0.03879848462543123,
+      "fraction_cooler_than_zero": 0.3184001568473679
+    },
+    {
+      "case": "benchmark_1mm_embedding_activity_0.20",
+      "power_mW": 29.092920914649767,
+      "min_K": 351.7650596279407,
+      "max_K": 354.9564108510786,
+      "mean_K": 353.5155745668946,
+      "mean_delta_from_zero_K": 0.0023029045849890933,
+      "max_abs_delta_from_zero_K": 0.054434167957424506,
+      "fraction_cooler_than_zero": 0.33315361239094204
+    },
+    {
+      "case": "benchmark_1mm_embedding_activity_zero_source",
+      "power_mW": 0,
+      "min_K": 351.7661850751847,
+      "max_K": 354.9571436479623,
+      "mean_K": 353.51327166230965,
+      "mean_delta_from_zero_K": 0.0,
+      "max_abs_delta_from_zero_K": 0.0,
+      "fraction_cooler_than_zero": 0.0
+    }
+  ],
+  "caveat": "Temperature summaries are predictions, not measured accuracy. Monotonicity is a diagnostic of the fixed linear-conduction assumption, not proof of correctness.",
+  "power_integral_max_absolute_error_W": 3.469446951953614e-18,
+  "median_forward_seconds": 0.02764124600798823,
+  "max_forward_seconds": 0.02873279299819842
+}

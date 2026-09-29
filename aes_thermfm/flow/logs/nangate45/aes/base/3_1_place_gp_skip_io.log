@@ -1,0 +1,16 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI -Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db -hier /work/flow/results/nangate45/aes/base/2_floorplan.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/flow/results/nangate45/aes/base/2_floorplan.sdc
+source /OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+FLOORPLAN_DEF is set. Skipping global placement without IOs
+Design area 15765 um^2 30% utilization.
+write_db /work/flow/results/nangate45/aes/base/3_1_place_gp_skip_io.odb
+Elapsed time: 0:00.34[h:]min:sec. CPU time: user 0.28 sys 0.05 (98%). Peak memory: 109440KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+3_1_place_gp_skip_io      .odb            0            106 f75ebe292af2f4e6b4e7

@@ -1,0 +1,154 @@
+[
+  {
+    "index": 0,
+    "case": "native_die_activity_0.02",
+    "coordinate_mode": "native_die",
+    "activity": "0.02",
+    "domain_size_um": [
+      249.85,
+      250.6
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 32004,
+    "total_power_W": 0.008865363052713349,
+    "integrated_density_power_W": 0.008865363052713349,
+    "max_density_W_m3": 74823669185.18079,
+    "mean_density_W_m3": 694006218.3465688,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  },
+  {
+    "index": 1,
+    "case": "native_die_activity_0.10",
+    "coordinate_mode": "native_die",
+    "activity": "0.10",
+    "domain_size_um": [
+      249.85,
+      250.6
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 32004,
+    "total_power_W": 0.0178553887245414,
+    "integrated_density_power_W": 0.0178553887245414,
+    "max_density_W_m3": 75889532766.63326,
+    "mean_density_W_m3": 1397771386.4785604,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  },
+  {
+    "index": 2,
+    "case": "native_die_activity_0.20",
+    "coordinate_mode": "native_die",
+    "activity": "0.20",
+    "domain_size_um": [
+      249.85,
+      250.6
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 32004,
+    "total_power_W": 0.029092920914649767,
+    "integrated_density_power_W": 0.029092920914649763,
+    "max_density_W_m3": 77221862265.95976,
+    "mean_density_W_m3": 2277477854.497148,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  },
+  {
+    "index": 3,
+    "case": "native_die_activity_zero_source",
+    "coordinate_mode": "native_die",
+    "activity": "zero_source",
+    "domain_size_um": [
+      249.85,
+      250.6
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 0,
+    "total_power_W": 0,
+    "integrated_density_power_W": 0.0,
+    "max_density_W_m3": 0.0,
+    "mean_density_W_m3": 0.0,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  },
+  {
+    "index": 4,
+    "case": "benchmark_1mm_embedding_activity_0.02",
+    "coordinate_mode": "benchmark_1mm_embedding",
+    "activity": "0.02",
+    "domain_size_um": [
+      1000.0,
+      1000.0
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 32004,
+    "total_power_W": 0.008865363052713349,
+    "integrated_density_power_W": 0.008865363052713349,
+    "max_density_W_m3": 6855820197.107873,
+    "mean_density_W_m3": 43453401.88566488,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  },
+  {
+    "index": 5,
+    "case": "benchmark_1mm_embedding_activity_0.10",
+    "coordinate_mode": "benchmark_1mm_embedding",
+    "activity": "0.10",
+    "domain_size_um": [
+      1000.0,
+      1000.0
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 32004,
+    "total_power_W": 0.0178553887245414,
+    "integrated_density_power_W": 0.0178553887245414,
+    "max_density_W_m3": 7774243667.863771,
+    "mean_density_W_m3": 87517835.13646407,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  },
+  {
+    "index": 6,
+    "case": "benchmark_1mm_embedding_activity_0.20",
+    "coordinate_mode": "benchmark_1mm_embedding",
+    "activity": "0.20",
+    "domain_size_um": [
+      1000.0,
+      1000.0
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 32004,
+    "total_power_W": 0.029092920914649767,
+    "integrated_density_power_W": 0.02909292091464977,
+    "max_density_W_m3": 9245515598.341562,
+    "mean_density_W_m3": 142598377.19169578,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  },
+  {
+    "index": 7,
+    "case": "benchmark_1mm_embedding_activity_zero_source",
+    "coordinate_mode": "benchmark_1mm_embedding",
+    "activity": "zero_source",
+    "domain_size_um": [
+      1000.0,
+      1000.0
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 0,
+    "total_power_W": 0,
+    "integrated_density_power_W": 0.0,
+    "max_density_W_m3": 0.0,
+    "mean_density_W_m3": 0.0,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  }
+]

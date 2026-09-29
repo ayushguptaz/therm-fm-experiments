@@ -1,0 +1,52 @@
+
+27. Printing statistics.
+
+=== aes_cipher_top ===
+
+        +----------------------------Count including submodules.
+        |        +-------------------Area including submodules.
+        |        |        +----------Local count, excluding submodules.
+        |        |        |        +-Local area, excluding submodules.
+        |        |        |        | 
+    11850        -    11850        - wires
+    12231        -    12231        - wire bits
+        8        -        8        - public wires
+      389        -      389        - public wire bits
+        7        -        7        - ports
+      388        -      388        - port bits
+        -        -        -        - memories
+        -        -        -        - memory bits
+        -        -        -        - processes
+    11406 1.54E+04    11406 1.54E+04 cells
+       50     53.2       50     53.2   AND2_X1
+       46    61.18       46    61.18   AND3_X1
+       12   19.152       12   19.152   AND4_X1
+        3    7.182        3    7.182   AOI211_X2
+     1642 1.75E+03     1642 1.75E+03   AOI21_X1
+      599  956.004      599  956.004   AOI221_X1
+       28   59.584       28   59.584   AOI222_X1
+      461   613.13      461   613.13   AOI22_X1
+      562 2.54E+03      562 2.54E+03   DFF_X1
+        4    10.64        4    10.64   HA_X1
+      106   56.392      106   56.392   INV_X1
+      568 1.06E+03      568 1.06E+03   MUX2_X1
+     1412 1.13E+03     1412 1.13E+03   NAND2_X1
+      264  280.896      264  280.896   NAND3_X1
+       53    70.49       53    70.49   NAND4_X1
+     1383  1.1E+03     1383  1.1E+03   NOR2_X1
+      279  296.856      279  296.856   NOR3_X1
+       51    67.83       51    67.83   NOR4_X1
+     1591 1.69E+03     1591 1.69E+03   OAI21_X1
+      608  970.368      608  970.368   OAI221_X1
+       29   61.712       29   61.712   OAI222_X1
+      470    625.1      470    625.1   OAI22_X1
+       65   121.03       65   121.03   OAI33_X1
+       47   50.008       47   50.008   OR2_X1
+       42    55.86       42    55.86   OR3_X1
+        3    4.788        3    4.788   OR4_X1
+      638 1.02E+03      638 1.02E+03   XNOR2_X1
+      390   622.44      390   622.44   XOR2_X1
+
+   Chip area for module '\aes_cipher_top': 15351.392000
+     of which used for sequential elements: 2541.364000 (16.55%)
+
