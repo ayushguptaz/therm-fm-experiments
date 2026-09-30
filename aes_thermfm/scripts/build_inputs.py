@@ -9,6 +9,8 @@ import numpy as np
 p=argparse.ArgumentParser()
 p.add_argument('--root',required=True)
 p.add_argument('--size',type=int,default=101)
+p.add_argument('--power-cases',nargs='+',default=['0.02','0.10','0.20'])
+p.add_argument('--power-source',choices=['assumed_activity','simulated_workload'],default='assumed_activity')
 p.add_argument('--thickness-um',type=float,default=200.)
 a=p.parse_args()
 root=Path(a.root)
@@ -72,7 +74,7 @@ power_maps=[]
 volume_maps=[]
 for mode,dw,dh in [('native_die',width,height),('benchmark_1mm_embedding',1000.,1000.)]:
     assert dw>=width and dh>=height
-    for activity in ['0.02','0.10','0.20','zero_source']:
+    for activity in [*a.power_cases,'zero_source']:
         rows=load_cells(activity) if activity!='zero_source' else []
         density,watts,volume,xn,yn,total,recovered=raster(rows,dw,dh)
         inp=np.zeros((4,2,a.size,a.size),dtype=np.float64)
@@ -85,9 +87,9 @@ for mode,dw,dh in [('native_die',width,height),('benchmark_1mm_embedding',1000.,
         samples.append(inp)
         power_maps.append(watts)
         volume_maps.append(volume)
-        manifest.append({'index':len(samples)-1,'case':f'{mode}_activity_{activity}','coordinate_mode':mode,'activity':activity,'domain_size_um':[dw,dh],'heat_source_thickness_um':a.thickness_um,'source_layer':0,'passive_zero_source_layer':1,'cell_count':len(rows),'total_power_W':total,'integrated_density_power_W':recovered,'max_density_W_m3':float(density.max()),'mean_density_W_m3':float(density.mean()),'assumptions':'x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established'})
+        manifest.append({'index':len(samples)-1,'case':f'{mode}_activity_{activity}','coordinate_mode':mode,'activity':activity if a.power_source=='assumed_activity' else None,'power_source':a.power_source,'workload':activity if a.power_source=='simulated_workload' else None,'domain_size_um':[dw,dh],'heat_source_thickness_um':a.thickness_um,'source_layer':0,'passive_zero_source_layer':1,'cell_count':len(rows),'total_power_W':total,'integrated_density_power_W':recovered,'max_density_W_m3':float(density.max()),'mean_density_W_m3':float(density.mean()),'assumptions':'x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established'})
 x=np.stack(samples)
-assert x.shape==(8,4,2,a.size,a.size)
+assert x.shape==(2*(len(a.power_cases)+1),4,2,a.size,a.size)
 assert np.isfinite(x).all()
 out=root/'inputs/thermfm'
 out.mkdir(parents=True,exist_ok=True)

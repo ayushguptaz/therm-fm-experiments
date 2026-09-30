@@ -1,0 +1,123 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI -Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db -hier /work/flow/results/nangate45/aes/base/1_synth.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/flow/results/nangate45/aes/base/1_synth.sdc
+source /OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+
+==========================================================================
+Floorplan check_setup
+--------------------------------------------------------------------------
+number instances in verilog is 11406
+read_def -floorplan_initialize /work/inputs/orfs_config/aes_ng45_fp.def
+[INFO ODB-0127] Reading DEF file: /work/inputs/orfs_config/aes_ng45_fp.def
+[INFO ODB-0128] Design: aes_cipher_top
+[INFO ODB-0252]     Updated 388 pins.
+[INFO ODB-0134] Finished DEF file: /work/inputs/orfs_config/aes_ng45_fp.def
+source /OpenROAD-flow-scripts/flow/platforms/nangate45/make_tracks.tcl
+source /OpenROAD-flow-scripts/flow/platforms/nangate45/fastroute.tcl
+set_dont_use "TAPCELL_X1 FILLCELL_X1 AOI211_X1 OAI211_X1"
+repair_tie_fanout -separation 0 NangateOpenCellLibrary/LOGIC0_X1/Z
+repair_tie_fanout -separation 0 NangateOpenCellLibrary/LOGIC1_X1/Z
+replace_arith_modules
+replace_arith_modules -path_count 1000 -target setup -slack_threshold 0.0
+[INFO RSZ-0151] Starting arithmetic module replacement to optimize 'setup' target
+[INFO RSZ-0152] Analyzing 1000 critical paths with slack < 0.00
+[INFO RSZ-0153] Identified 27 violating endpoints
+[INFO RSZ-0154] Identified 0 critical arithmetic instances
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -setup -skip_last_gasp -sequence unbuffer,sizeup,swap,vt_swap -verbose
+[WARNING EST-0027] no estimated parasitics. Using wire load models.
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove 
+[INFO RSZ-0094] Found 27 endpoints with setup violations.
+[INFO RSZ-0099] Repairing 27 out of 27 (100.00%) violating endpoints...
+   Iter   | Removed | Resized | Inserted | Cloned |  Pin  |   Area   |    WNS   |    TNS     |  Viol  |  Worst
+          | Buffers |  Gates  | Buffers  |  Gates | Swaps |          |          |            | Endpts | Endpoint
+------------------------------------------------------------------------------------------------------------------------------
+       0* |       0 |       0 |        0 |      0 |     0 |    +0.0% |   -0.621 |      -13.2 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+       3* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+       4* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+       5* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+       6* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+       7* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+       8* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+       9* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      10* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      10* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      11* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      12* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      13* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      14* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      15* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      16* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      17* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      18* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      19* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      20* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      20* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      21* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      22* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      23* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      24* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      25* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      26* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      27* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      28* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      29* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+      29* |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |     27 | u0.u2.d\[1\]$_DFF_P_/D
+    final |       0 |       1 |        0 |      0 |     1 |    +0.0% |    0.044 |        0.0 |      0 | u0.u2.d\[1\]$_DFF_P_/D
+------------------------------------------------------------------------------------------------------------------------------
+[INFO RSZ-0051] Resized 1 instances: 1 up, 0 up match, 0 down, 0 VT
+[INFO RSZ-0043] Swapped pins on 1 instances.
+[INFO RSZ-0505] Runtime: 0.23s
+Default units for flow
+ time 1ns
+ capacitance 1fF
+ resistance 1kohm
+ voltage 1v
+ current 1mA
+ power 1nW
+ distance 1um
+   Layer   | Unit Resistance | Unit Capacitance 
+           |       (kohm/um) |          (fF/um)
+------------------------------------------------
+    metal1 |        5.43e-03 |         7.42e-02
+    metal2 |        3.57e-03 |         8.34e-02
+    metal3 |        3.57e-03 |         1.04e-01
+    metal4 |        1.50e-03 |         1.19e-01
+    metal5 |        1.50e-03 |         1.09e-01
+    metal6 |        1.50e-03 |         1.14e-01
+    metal7 |        1.88e-04 |         1.17e-01
+    metal8 |        1.88e-04 |         9.45e-02
+    metal9 |        3.75e-05 |         1.06e-01
+   metal10 |        3.75e-05 |         7.37e-01
+------------------------------------------------
+
+   Layer   | Via Resistance 
+           |         (kohm) 
+----------------------------
+      via1 |       5.00e-03 
+      via2 |       5.00e-03 
+      via3 |       5.00e-03 
+      via4 |       3.00e-03 
+      via5 |       3.00e-03 
+      via6 |       3.00e-03 
+      via7 |       1.00e-03 
+      via8 |       1.00e-03 
+      via9 |       5.00e-04 
+----------------------------
+Report metrics stage 2, floorplan final...
+
+==========================================================================
+floorplan final report_design_area
+--------------------------------------------------------------------------
+Design area 15352 um^2 29% utilization.
+write_db /work/flow/results/nangate45/aes/base/2_1_floorplan.odb
+write_sdc -no_timestamp /work/flow/results/nangate45/aes/base/2_1_floorplan.sdc
+Elapsed time: 0:02.04[h:]min:sec. CPU time: user 3.08 sys 0.17 (159%). Peak memory: 178712KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+2_1_floorplan             .odb            2            174 0f2112174b6f0e931bdf
+2_1_floorplan             .sdc                             573462c66ec126058b02

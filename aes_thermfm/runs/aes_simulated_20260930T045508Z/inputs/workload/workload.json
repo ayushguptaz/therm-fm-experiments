@@ -1,0 +1,21 @@
+{
+  "seed": 20260930,
+  "key_hex": "000102030405060708090a0b0c0d0e0f",
+  "total_blocks": 272,
+  "warmup_blocks": 16,
+  "measured_blocks": 256,
+  "clock_period_ns": 2.0,
+  "workloads": {
+    "busy": {
+      "gap_cycles": 0
+    },
+    "gapped": {
+      "gap_cycles": 16
+    }
+  },
+  "reference": "OpenSSL AES-128-ECB without padding; first vector independently checked against the standard AES example",
+  "openssl_version": "OpenSSL 3.0.2 15 Mar 2022 (Library: OpenSSL 3.0.2 15 Mar 2022)",
+  "plaintext_sha256": "d04d1e4fe5cfd66bc7eed7bfbb75e6055941d72ca75228ade807fb73b3b33599",
+  "reference_sha256": "98b82d300ca23923d92a6f06e490cd80c80f4b9b3010e5eb56ce3b28c5f379ba",
+  "scope": "Synthetic reproducible transaction workloads, not captured application traffic; fixed key; no timing-delay annotation in gate simulation."
+}

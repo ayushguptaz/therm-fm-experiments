@@ -1,0 +1,128 @@
+[
+  {
+    "index": 0,
+    "case": "native_die_activity_busy",
+    "coordinate_mode": "native_die",
+    "activity": null,
+    "power_source": "simulated_workload",
+    "workload": "busy",
+    "domain_size_um": [
+      249.85,
+      250.6
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 29153,
+    "total_power_W": 0.02015545598327506,
+    "integrated_density_power_W": 0.020155455983275058,
+    "max_density_W_m3": 36340038364.21108,
+    "mean_density_W_m3": 1577827292.8960593,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  },
+  {
+    "index": 1,
+    "case": "native_die_activity_gapped",
+    "coordinate_mode": "native_die",
+    "activity": null,
+    "power_source": "simulated_workload",
+    "workload": "gapped",
+    "domain_size_um": [
+      249.85,
+      250.6
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 29153,
+    "total_power_W": 0.01994478662257171,
+    "integrated_density_power_W": 0.01994478662257171,
+    "max_density_W_m3": 36200926158.69553,
+    "mean_density_W_m3": 1561335487.0361204,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  },
+  {
+    "index": 2,
+    "case": "native_die_activity_zero_source",
+    "coordinate_mode": "native_die",
+    "activity": null,
+    "power_source": "simulated_workload",
+    "workload": "zero_source",
+    "domain_size_um": [
+      249.85,
+      250.6
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 0,
+    "total_power_W": 0,
+    "integrated_density_power_W": 0.0,
+    "max_density_W_m3": 0.0,
+    "mean_density_W_m3": 0.0,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  },
+  {
+    "index": 3,
+    "case": "benchmark_1mm_embedding_activity_busy",
+    "coordinate_mode": "benchmark_1mm_embedding",
+    "activity": null,
+    "power_source": "simulated_workload",
+    "workload": "busy",
+    "domain_size_um": [
+      1000.0,
+      1000.0
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 29153,
+    "total_power_W": 0.02015545598327506,
+    "integrated_density_power_W": 0.02015545598327506,
+    "max_density_W_m3": 8273566067.240155,
+    "mean_density_W_m3": 98791569.37199815,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  },
+  {
+    "index": 4,
+    "case": "benchmark_1mm_embedding_activity_gapped",
+    "coordinate_mode": "benchmark_1mm_embedding",
+    "activity": null,
+    "power_source": "simulated_workload",
+    "workload": "gapped",
+    "domain_size_um": [
+      1000.0,
+      1000.0
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 29153,
+    "total_power_W": 0.01994478662257171,
+    "integrated_density_power_W": 0.01994478662257171,
+    "max_density_W_m3": 8008287719.442802,
+    "mean_density_W_m3": 97758977.66185524,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  },
+  {
+    "index": 5,
+    "case": "benchmark_1mm_embedding_activity_zero_source",
+    "coordinate_mode": "benchmark_1mm_embedding",
+    "activity": null,
+    "power_source": "simulated_workload",
+    "workload": "zero_source",
+    "domain_size_um": [
+      1000.0,
+      1000.0
+    ],
+    "heat_source_thickness_um": 200.0,
+    "source_layer": 0,
+    "passive_zero_source_layer": 1,
+    "cell_count": 0,
+    "total_power_W": 0,
+    "integrated_density_power_W": 0.0,
+    "max_density_W_m3": 0.0,
+    "mean_density_W_m3": 0.0,
+    "assumptions": "x/y in mm; z=1,2 are layer IDs; source treated as W/m^3; checkpoint package retained implicitly; no physical accuracy established"
+  }
+]

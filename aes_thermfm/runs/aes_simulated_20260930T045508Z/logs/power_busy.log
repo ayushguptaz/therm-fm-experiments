@@ -1,0 +1,14 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI -Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+ time 1ns
+ capacitance 1fF
+ resistance 1kohm
+ voltage 1v
+ current 1mA
+ power 1nW
+ distance 1um
+Annotated 47763 pin activities.
+POWER_EXPORT activity=busy cells=29153 total_W=0.02015545598327506 design_components=0.008677179925143719 0.011090775020420551 0.00038749005761928856 0.020155444741249084 0.002085881307721138 0.0008102930733002722 4.442223143996671e-5 0.0029405965469777584 0.005888850428164005 0.00946434959769249 0.000337953184498474 0.015691153705120087 0.0007024446385912597 0.0008161332807503641 5.115862677484984e-6 0.0015236937906593084 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0

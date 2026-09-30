@@ -1,0 +1,72 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.sim
+#1 transferring dockerfile: 249B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/openroad/orfs@sha256:94d3c1c19b47e8ef2c3a9b32cb9dc6e5c18817ffb71f03e28ec67d6fa0a44512
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM docker.io/openroad/orfs@sha256:94d3c1c19b47e8ef2c3a9b32cb9dc6e5c18817ffb71f03e28ec67d6fa0a44512
+#4 resolve docker.io/openroad/orfs@sha256:94d3c1c19b47e8ef2c3a9b32cb9dc6e5c18817ffb71f03e28ec67d6fa0a44512 0.0s done
+#4 DONE 0.6s
+
+#5 [2/2] RUN apt-get update && apt-get install -y --no-install-recommends iverilog && rm -rf /var/lib/apt/lists/*
+#5 0.213 Get:1 https://download.docker.com/linux/ubuntu jammy InRelease [48.5 kB]
+#5 0.220 Get:2 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+#5 0.274 Get:3 https://download.docker.com/linux/ubuntu jammy/stable amd64 Packages [106 kB]
+#5 0.284 Get:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+#5 0.300 Get:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+#5 0.357 Get:6 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+#5 0.382 Get:7 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+#5 0.542 Get:8 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+#5 0.543 Get:9 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+#5 0.552 Get:10 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+#5 0.553 Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [93.2 kB]
+#5 0.554 Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [8133 kB]
+#5 0.595 Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1623 kB]
+#5 0.601 Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [4708 kB]
+#5 0.623 Get:15 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.6 kB]
+#5 0.623 Get:16 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [82.9 kB]
+#5 0.794 Get:17 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [7838 kB]
+#5 1.400 Get:18 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [84.6 kB]
+#5 1.401 Get:19 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [4367 kB]
+#5 1.486 Get:20 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1321 kB]
+#5 1.995 Fetched 48.8 MB in 2s (27.1 MB/s)
+#5 1.995 Reading package lists...
+#5 2.961 Reading package lists...
+#5 3.876 Building dependency tree...
+#5 4.064 Reading state information...
+#5 4.208 Suggested packages:
+#5 4.208   gtkwave
+#5 4.247 The following NEW packages will be installed:
+#5 4.248   iverilog
+#5 4.414 0 upgraded, 1 newly installed, 0 to remove and 11 not upgraded.
+#5 4.414 Need to get 2130 kB of archives.
+#5 4.414 After this operation, 6749 kB of additional disk space will be used.
+#5 4.414 Get:1 http://archive.ubuntu.com/ubuntu jammy/universe amd64 iverilog amd64 11.0-1.1 [2130 kB]
+#5 5.128 debconf: delaying package configuration, since apt-utils is not installed
+#5 5.166 Fetched 2130 kB in 1s (2949 kB/s)
+#5 5.202 Selecting previously unselected package iverilog.
+#5 5.202 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 55606 files and directories currently installed.)
+#5 5.231 Preparing to unpack .../iverilog_11.0-1.1_amd64.deb ...
+#5 5.236 Unpacking iverilog (11.0-1.1) ...
+#5 5.347 Setting up iverilog (11.0-1.1) ...
+#5 5.365 Processing triggers for man-db (2.10.2-1) ...
+#5 DONE 5.8s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 0.4s done
+#6 exporting manifest sha256:711de16c5f1a99571a2dc9f4affdd6ab83017323220d72050315940ba10f39ca 0.0s done
+#6 exporting config sha256:a2e1205ff85c900914b19f4ca54744542eac8c182ce366cd7b94a4ea3b722edd 0.0s done
+#6 exporting attestation manifest sha256:14219423d6c8a644de553f21ae96d6519fa25933e152f8e37a7b7f0afac1bb1c 0.0s done
+#6 exporting manifest list sha256:4d41094198584fda7e4fb99b5e38e25e60757ed871e5e513fa0fceb3d1be11fd 0.0s done
+#6 naming to docker.io/library/aes-thermfm-sim:20260930
+#6 naming to docker.io/library/aes-thermfm-sim:20260930 done
+#6 unpacking to docker.io/library/aes-thermfm-sim:20260930 0.1s done
+#6 DONE 0.6s

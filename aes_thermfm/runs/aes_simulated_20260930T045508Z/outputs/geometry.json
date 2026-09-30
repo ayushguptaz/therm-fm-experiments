@@ -1,0 +1,3 @@
+{
+"dbu_per_micron": 2000, "die_um": [0,0,249.85,250.6], "core_um": [10.07,11.2,239.97,240.8], "parasitics": "extracted_spef"
+}

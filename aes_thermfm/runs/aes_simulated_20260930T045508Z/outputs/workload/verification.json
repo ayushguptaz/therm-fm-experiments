@@ -1,0 +1,15 @@
+{
+  "static_setup_and_hold_pass": true,
+  "router_drc_zero": true,
+  "power_conservation": true,
+  "finite_inputs_outputs": true,
+  "synthetic_second_slot_zero_power": true,
+  "shape_checks": true,
+  "timing_metrics": {
+    "finish__timing__setup__ws": 0.591159,
+    "finish__timing__hold__ws": 0.106381,
+    "finish__timing__drv__setup_violation_count": 0,
+    "finish__timing__drv__hold_violation_count": 0
+  },
+  "scope": "Integrity checks, not thermal accuracy. Gate simulation is functional without SDF delays."
+}

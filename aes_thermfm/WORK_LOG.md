@@ -99,3 +99,22 @@ Requested execution experiment completed. Physical validation, workload-derived 
 ## Git archive preparation — 2026-09-30
 
 Copied the completed local experiment into `therm-fm-experiments/aes_thermfm/` for version control. Included scripts, inputs, routed artifacts, reports, predictions, vendor source/configuration and the verified presentation. Excluded ignored checkpoint weights, Python caches and presentation scratch builds. Documented checkpoint restoration in `docs/GIT_ARCHIVE.md` and regenerated the manifest for the committed subset. This archival step does not rerun the physical-design or inference experiments.
+
+## Simulation-based workload rerun — started 2026-09-30
+
+User requested a new RTL-to-temperature run with simulated activity. Preparing an isolated `aes_simulated_20260930T045508Z` run. Using a 2 ns clock instead of the earlier failing 0.82 ns target; gate-level functional simulation with independent OpenSSL ciphertext checks, 16 warm-up plus 256 measured blocks, fixed key, deterministic plaintext seed, and 0/16-cycle request gaps. No SDF delays: glitch power remains unmeasured. Thermal checkpoint, hypothetical second slot and 200 µm heat-source thickness remain exploratory assumptions. Results pending.
+
+### Fresh physical design and simulated workload checks
+
+- Fresh flow completed from archived RTL/DEF and modified source SDC at `/home/ubuntu/aes_simulated_20260930T045508Z`. Final setup slack +0.591159 ns, hold slack +0.106381 ns, zero setup/hold violations and zero detailed-router DRC errors. 29,153 physical instances; 12,842 reported standard cells. Flow summary stage total 349 seconds (rounded by the flow).
+- Both functional gate-level simulations passed all 272 independent OpenSSL ciphertext comparisons. After 16 warm-up blocks, busy measured 256 blocks over 6.656 µs and gapped measured 256 over 14.848 µs. No SDF delay annotation was used.
+- Busy VCD imported with 47,763 annotated pins and zero unannotated pins; summed per-cell power 0.02015545598327506 W. Gapped import and final waveform audit/inference are pending at this log entry.
+- Raw waveforms reached hundreds of MB to over 1 GB per scenario. Timestamp rebasing preserves signal values and avoids including the pre-recording warm-up interval in the power window. Raw and rebased traces are retained for provenance and will be compressed for storage.
+
+- Gapped VCD also imported with 47,763 annotated pins and zero unannotated pins. Summed per-cell power is 0.01994478662257171 W, about 1.05% below busy despite the longer request gaps. The clock and internal AES state-update logic continue running between requests; gaps are not equivalent to clock gating. Full waveform validation precedes inference.
+
+### Simulated-workload run completed
+
+Both complete waveform scans passed with zero X/Z records and zero unannotated pins. All six inputs conserved power; Therm-FM produced finite `[6,2,101,101]` temperature arrays. Native AES-slot means: busy 352.227840 K, gapped 352.227385 K; these are unvalidated model predictions. Forward median approximately 28.93 ms. Saved the compact review archive under `runs/aes_simulated_20260930T045508Z/`; verified all 158 transferred file hashes. Large raw and rebased VCD recordings remain on the execution host, compressed for storage; retrieval instructions and exact provenance hashes are in the run README and JSON reports. Busy plot visually reviewed; final review/checks continue below.
+
+Final review: both power/temperature figures inspected; all 158 review-archive hashes passed. The new scripts pass Python syntax and shell syntax checks. The remote run reports `PASS`. No AES thermal accuracy is claimed; raw traces remain on the execution host and all selected results are available locally.

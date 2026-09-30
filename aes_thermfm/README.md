@@ -1,6 +1,8 @@
 # AES → OpenROAD → Therm-FM
 
-Completed exploratory pipeline, 2026-09-29 (IST). **The pipeline runs; the AES temperature predictions are not physically validated.**
+**Latest:** [completed simulated-workload run](runs/aes_simulated_20260930T045508Z/README.md), using fresh physical design and VCD-derived activity.
+
+Original exploratory pipeline, 2026-09-29 (IST). **The pipeline runs; the AES temperature predictions are not physically validated.**
 
 Start with [RESULTS_AND_BOTTLENECKS.md](RESULTS_AND_BOTTLENECKS.md). The chronological record is [WORK_LOG.md](WORK_LOG.md), and all thermal assumptions are in [docs/THERMAL_ASSUMPTIONS.md](docs/THERMAL_ASSUMPTIONS.md).
 
@@ -15,6 +17,10 @@ Presentation: [AES_ThermFM_Pipeline_Verified.pptx](presentation/output/AES_Therm
 ## Git checkout
 
 Model weights are excluded by the repository ignore rules. See [GIT_ARCHIVE.md](docs/GIT_ARCHIVE.md) for checkpoint restoration and the scope of this snapshot before running inference.
+
+## Simulation-based workload pipeline
+
+The new [simulated-workload flow](docs/SIMULATED_WORKLOAD_PIPELINE.md) starts from AES RTL and constraints, creates a fresh routed design, verifies encryption transactions in gate-level simulation, imports VCD switching activity, and generates new power and temperature maps. It uses a 2 ns clock and explicit busy/gapped workloads. Thermal-stack assumptions remain unvalidated.
 
 ## Executed flow
 

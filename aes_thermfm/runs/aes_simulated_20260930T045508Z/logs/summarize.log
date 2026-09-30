@@ -1,0 +1,89 @@
+[
+  {
+    "case": "native_die_activity_busy",
+    "domain": "native_die",
+    "workload": "busy",
+    "power_mW": 20.15545598327506,
+    "conservation_error_W": -3.469446951953614e-18,
+    "AES_mean_K": 352.2278402989557,
+    "AES_peak_K": 353.7537061065967,
+    "AES_mean_change_from_zero_K": 0.043073710670491754,
+    "second_slot_mean_K": 354.31562551670095,
+    "second_slot_peak_K": 355.49884872250016
+  },
+  {
+    "case": "native_die_activity_gapped",
+    "domain": "native_die",
+    "workload": "gapped",
+    "power_mW": 19.94478662257171,
+    "conservation_error_W": 0.0,
+    "AES_mean_K": 352.22738495551897,
+    "AES_peak_K": 353.75387077492707,
+    "AES_mean_change_from_zero_K": 0.042618367233854024,
+    "second_slot_mean_K": 354.3152544090953,
+    "second_slot_peak_K": 355.49887433158943
+  },
+  {
+    "case": "native_die_activity_zero_source",
+    "domain": "native_die",
+    "workload": "zero_source",
+    "power_mW": 0,
+    "conservation_error_W": 0.0,
+    "AES_mean_K": 352.18476658828513,
+    "AES_peak_K": 353.7544713734304,
+    "AES_mean_change_from_zero_K": 0.0,
+    "second_slot_mean_K": 354.2940849053464,
+    "second_slot_peak_K": 355.5006356678411
+  },
+  {
+    "case": "benchmark_1mm_embedding_activity_busy",
+    "domain": "benchmark_1mm_embedding",
+    "workload": "busy",
+    "power_mW": 20.15545598327506,
+    "conservation_error_W": 0.0,
+    "AES_mean_K": 352.4395757581626,
+    "AES_peak_K": 352.9908033646981,
+    "AES_mean_change_from_zero_K": 0.002394779284820086,
+    "second_slot_mean_K": 354.59007506230887,
+    "second_slot_peak_K": 354.9571261317887
+  },
+  {
+    "case": "benchmark_1mm_embedding_activity_gapped",
+    "domain": "benchmark_1mm_embedding",
+    "workload": "gapped",
+    "power_mW": 19.94478662257171,
+    "conservation_error_W": 0.0,
+    "AES_mean_K": 352.43954361445515,
+    "AES_peak_K": 352.9908046077711,
+    "AES_mean_change_from_zero_K": 0.0023626355774310193,
+    "second_slot_mean_K": 354.5900689124481,
+    "second_slot_peak_K": 354.9571432784228
+  },
+  {
+    "case": "benchmark_1mm_embedding_activity_zero_source",
+    "domain": "benchmark_1mm_embedding",
+    "workload": "zero_source",
+    "power_mW": 0,
+    "conservation_error_W": 0.0,
+    "AES_mean_K": 352.43718097887773,
+    "AES_peak_K": 352.9910660415676,
+    "AES_mean_change_from_zero_K": 0.0,
+    "second_slot_mean_K": 354.5893623457415,
+    "second_slot_peak_K": 354.9571436479623
+  }
+]
+{
+  "static_setup_and_hold_pass": true,
+  "router_drc_zero": true,
+  "power_conservation": true,
+  "finite_inputs_outputs": true,
+  "synthetic_second_slot_zero_power": true,
+  "shape_checks": true,
+  "timing_metrics": {
+    "finish__timing__setup__ws": 0.591159,
+    "finish__timing__hold__ws": 0.106381,
+    "finish__timing__drv__setup_violation_count": 0,
+    "finish__timing__drv__hold_violation_count": 0
+  },
+  "scope": "Integrity checks, not thermal accuracy. Gate simulation is functional without SDF delays."
+}

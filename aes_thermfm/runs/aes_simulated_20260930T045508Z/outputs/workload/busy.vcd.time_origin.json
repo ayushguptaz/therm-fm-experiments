@@ -1,0 +1,7 @@
+{
+  "source_sha256": "8246febe49fa16042b3d9a22cfbc9ebddbb8c5bfa212bbe3c7be071dae19ef5b",
+  "source_start_ps": 426000,
+  "source_end_ps": 7082000,
+  "duration_ps": 6656000,
+  "change": "Only timestamp origin shifted; all signal value records preserved."
+}

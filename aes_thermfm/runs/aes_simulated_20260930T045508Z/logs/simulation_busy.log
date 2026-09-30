@@ -1,0 +1,2 @@
+VCD info: dumpfile /work/outputs/workload/busy.raw.vcd opened for output.
+PASS blocks=272 warmup=16 measured=256 gap_cycles=0 start_ps=426000 end_ps=7082000 duration_ps=6656000

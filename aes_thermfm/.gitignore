@@ -4,3 +4,8 @@ __pycache__/
 .DS_Store
 *.bin
 *.safetensors
+
+# Large reproducible simulation traces and compiled simulator executables
+runs/**/outputs/workload/*.vcd
+runs/**/outputs/workload/*.vcd.gz
+runs/**/outputs/workload/*.vvp

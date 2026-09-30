@@ -1,0 +1,42 @@
+{
+  "busy": {
+    "vcd_sha256": "8ed3164c6c8299903484b83365f1d64ea2bb44ea605683e1462a3c03e6d1ce32",
+    "bytes": 526508818,
+    "declarations": 94119,
+    "unique_signal_codes": 46653,
+    "initialized_codes": 46653,
+    "value_records": 109035515,
+    "unknown_value_records": 0,
+    "clock_transitions": 6656,
+    "start_ps": 426000,
+    "end_ps": 7082000,
+    "duration_ps": 6656000,
+    "gap_cycles": 0,
+    "ciphertexts_checked": 272,
+    "measured_blocks": 256,
+    "annotation_report": "vcd         47763\nunannotated     0\n",
+    "warnings": [
+      "[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments."
+    ]
+  },
+  "gapped": {
+    "vcd_sha256": "3e9219df047af1f876052bd8bb0330bd93c9ed33ca4ee6b62606f27f0be98073",
+    "bytes": 1162519681,
+    "declarations": 94119,
+    "unique_signal_codes": 46653,
+    "initialized_codes": 46653,
+    "value_records": 241458837,
+    "unknown_value_records": 0,
+    "clock_transitions": 14848,
+    "start_ps": 426000,
+    "end_ps": 15274000,
+    "duration_ps": 14848000,
+    "gap_cycles": 16,
+    "ciphertexts_checked": 272,
+    "measured_blocks": 256,
+    "annotation_report": "vcd         47763\nunannotated     0\n",
+    "warnings": [
+      "[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments."
+    ]
+  }
+}
